@@ -1,0 +1,629 @@
+0 verbose cli /opt/homebrew/Cellar/node/23.7.0/bin/node /opt/homebrew/bin/npm
+1 info using npm@10.9.2
+2 info using node@v23.7.0
+3 silly config load:file:/opt/homebrew/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/nivethaniruthayanathan/Code/Cantask/.npmrc
+5 silly config load:file:/Users/nivethaniruthayanathan/.npmrc
+6 silly config load:file:/opt/homebrew/etc/npmrc
+7 verbose title npm install @dnd-kit/core @dnd-kit/sortable @dnd-kit/utilities
+8 verbose argv "install" "--save" "@dnd-kit/core" "@dnd-kit/sortable" "@dnd-kit/utilities" "--workspace" "@cantask/web" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:/Users/nivethaniruthayanathan/Code/Cantask/.npm-cache/_logs/2026-08-15T23_24_40_985Z-
+10 verbose logfile /Users/nivethaniruthayanathan/Code/Cantask/.npm-cache/_logs/2026-08-15T23_24_40_985Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: apps/api
+14 silly idealTree buildDeps
+15 silly fetch manifest @dnd-kit/core@*
+16 silly packumentCache full:https://registry.npmjs.org/@dnd-kit%2fcore cache-miss
+17 http fetch GET 200 https://registry.npmjs.org/@dnd-kit%2fcore 174ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/@dnd-kit%2fcore set size:undefined disposed:false
+19 silly fetch manifest react@^18.3.1
+20 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/react 31ms (cache revalidated)
+22 silly packumentCache full:https://registry.npmjs.org/react set size:6897881 disposed:false
+23 silly fetch manifest react-dom@^18.3.1
+24 silly packumentCache full:https://registry.npmjs.org/react-dom cache-miss
+25 http fetch GET 200 https://registry.npmjs.org/react-dom 51ms (cache revalidated)
+26 silly packumentCache full:https://registry.npmjs.org/react-dom set size:9267760 disposed:false
+27 silly fetch manifest @dnd-kit/sortable@*
+28 silly packumentCache full:https://registry.npmjs.org/@dnd-kit%2fsortable cache-miss
+29 http fetch GET 200 https://registry.npmjs.org/@dnd-kit%2fsortable 42ms (cache miss)
+30 silly packumentCache full:https://registry.npmjs.org/@dnd-kit%2fsortable set size:undefined disposed:false
+31 silly fetch manifest @dnd-kit/utilities@*
+32 silly packumentCache full:https://registry.npmjs.org/@dnd-kit%2futilities cache-miss
+33 http fetch GET 200 https://registry.npmjs.org/@dnd-kit%2futilities 35ms (cache miss)
+34 silly packumentCache full:https://registry.npmjs.org/@dnd-kit%2futilities set size:undefined disposed:false
+35 silly placeDep ROOT @dnd-kit/core@6.3.1 OK for: @cantask/web@1.0.0 want: *
+36 silly placeDep ROOT @dnd-kit/sortable@10.0.0 OK for: @cantask/web@1.0.0 want: *
+37 silly placeDep ROOT @dnd-kit/utilities@3.2.2 OK for: @cantask/web@1.0.0 want: *
+38 silly fetch manifest @dnd-kit/accessibility@^3.1.1
+39 silly packumentCache full:https://registry.npmjs.org/@dnd-kit%2faccessibility cache-miss
+40 silly fetch manifest @dnd-kit/utilities@^3.2.2
+41 silly packumentCache full:https://registry.npmjs.org/@dnd-kit%2futilities cache-miss
+42 silly fetch manifest @dnd-kit/utilities@^3.2.2
+43 silly packumentCache full:https://registry.npmjs.org/@dnd-kit%2futilities cache-miss
+44 http cache https://registry.npmjs.org/@dnd-kit%2futilities 2ms (cache hit)
+45 silly packumentCache full:https://registry.npmjs.org/@dnd-kit%2futilities set size:247103 disposed:false
+46 http cache https://registry.npmjs.org/@dnd-kit%2futilities 4ms (cache hit)
+47 silly packumentCache full:https://registry.npmjs.org/@dnd-kit%2futilities set size:247103 disposed:false
+48 silly packumentCache full:https://registry.npmjs.org/@dnd-kit%2futilities dispose
+49 http fetch GET 200 https://registry.npmjs.org/@dnd-kit%2faccessibility 29ms (cache miss)
+50 silly packumentCache full:https://registry.npmjs.org/@dnd-kit%2faccessibility set size:undefined disposed:false
+51 silly fetch manifest react@>=16.8.0
+52 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+53 http cache https://registry.npmjs.org/react 9ms (cache hit)
+54 silly packumentCache full:https://registry.npmjs.org/react set size:6897881 disposed:false
+55 silly placeDep ROOT @dnd-kit/accessibility@3.1.1 OK for: @dnd-kit/core@6.3.1 want: ^3.1.1
+56 silly reify moves {}
+57 silly audit bulk request {
+57 silly audit   '@cantask/web': [ '1.0.0' ],
+57 silly audit   '@babel/code-frame': [ '7.29.7' ],
+57 silly audit   '@babel/compat-data': [ '7.29.7' ],
+57 silly audit   '@babel/core': [ '7.29.7' ],
+57 silly audit   '@babel/generator': [ '7.29.8' ],
+57 silly audit   '@babel/helper-compilation-targets': [ '7.29.7' ],
+57 silly audit   '@babel/helper-globals': [ '7.29.7' ],
+57 silly audit   '@babel/helper-module-imports': [ '7.29.7' ],
+57 silly audit   '@babel/helper-module-transforms': [ '7.29.7' ],
+57 silly audit   '@babel/helper-plugin-utils': [ '7.29.7' ],
+57 silly audit   '@babel/helper-string-parser': [ '7.29.7' ],
+57 silly audit   '@babel/helper-validator-identifier': [ '7.29.7' ],
+57 silly audit   '@babel/helper-validator-option': [ '7.29.7' ],
+57 silly audit   '@babel/helpers': [ '7.29.7' ],
+57 silly audit   '@babel/parser': [ '7.29.8' ],
+57 silly audit   '@babel/plugin-transform-react-jsx-self': [ '7.29.7' ],
+57 silly audit   '@babel/plugin-transform-react-jsx-source': [ '7.29.7' ],
+57 silly audit   '@babel/template': [ '7.29.7' ],
+57 silly audit   '@babel/traverse': [ '7.29.8' ],
+57 silly audit   '@babel/types': [ '7.29.8' ],
+57 silly audit   '@esbuild/aix-ppc64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/android-arm': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/android-arm64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/android-x64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/darwin-arm64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/darwin-x64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/freebsd-arm64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/freebsd-x64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/linux-arm': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/linux-arm64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/linux-ia32': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/linux-loong64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/linux-mips64el': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/linux-ppc64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/linux-riscv64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/linux-s390x': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/linux-x64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/netbsd-arm64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/netbsd-x64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/openbsd-arm64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/openbsd-x64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/openharmony-arm64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/sunos-x64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/win32-arm64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/win32-ia32': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@esbuild/win32-x64': [ '0.28.2', '0.25.12' ],
+57 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+57 silly audit   '@jridgewell/remapping': [ '2.3.5' ],
+57 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+57 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+57 silly audit   '@jridgewell/trace-mapping': [ '0.3.31' ],
+57 silly audit   '@napi-rs/lzma-linux-x64-gnu': [ '1.5.1' ],
+57 silly audit   '@remix-run/router': [ '1.23.3' ],
+57 silly audit   '@rolldown/pluginutils': [ '1.0.0-beta.27' ],
+57 silly audit   '@rollup/rollup-android-arm-eabi': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-android-arm64': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-darwin-arm64': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-darwin-x64': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-freebsd-arm64': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-freebsd-x64': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-linux-arm-gnueabihf': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-linux-arm-musleabihf': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-linux-arm64-gnu': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-linux-arm64-musl': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-linux-loong64-gnu': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-linux-loong64-musl': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-linux-ppc64-gnu': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-linux-ppc64-musl': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-linux-riscv64-gnu': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-linux-riscv64-musl': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-linux-s390x-gnu': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-linux-x64-gnu': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-linux-x64-musl': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-openbsd-x64': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-openharmony-arm64': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-win32-arm64-msvc': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-win32-ia32-msvc': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-win32-x64-gnu': [ '4.62.4' ],
+57 silly audit   '@rollup/rollup-win32-x64-msvc': [ '4.62.4' ],
+57 silly audit   '@types/babel__core': [ '7.20.5' ],
+57 silly audit   '@types/babel__generator': [ '7.27.0' ],
+57 silly audit   '@types/babel__template': [ '7.4.4' ],
+57 silly audit   '@types/babel__traverse': [ '7.28.0' ],
+57 silly audit   '@types/estree': [ '1.0.9' ],
+57 silly audit   '@types/node': [ '22.20.1' ],
+57 silly audit   '@types/prop-types': [ '15.7.15' ],
+57 silly audit   '@types/react': [ '18.3.31' ],
+57 silly audit   '@types/react-dom': [ '18.3.7' ],
+57 silly audit   '@vitejs/plugin-react': [ '4.7.0' ],
+57 silly audit   'baseline-browser-mapping': [ '2.11.14' ],
+57 silly audit   debug: [ '4.4.3' ],
+57 silly audit   ms: [ '2.1.3' ],
+57 silly audit   browserslist: [ '4.28.8' ],
+57 silly audit   'caniuse-lite': [ '1.0.30001809' ],
+57 silly audit   'convert-source-map': [ '2.0.0' ],
+57 silly audit   csstype: [ '3.2.3' ],
+57 silly audit   'electron-to-chromium': [ '1.5.407' ],
+57 silly audit   esbuild: [ '0.28.2', '0.25.12' ],
+57 silly audit   escalade: [ '3.2.0' ],
+57 silly audit   fdir: [ '6.5.0' ],
+57 silly audit   fsevents: [ '2.3.3' ],
+57 silly audit   gensync: [ '1.0.0-beta.2' ],
+57 silly audit   'js-tokens': [ '4.0.0' ],
+57 silly audit   jsesc: [ '3.1.0' ],
+57 silly audit   json5: [ '2.2.3' ],
+57 silly audit   'loose-envify': [ '1.4.0' ],
+57 silly audit   'lru-cache': [ '5.1.1' ],
+57 silly audit   nanoid: [ '3.3.18' ],
+57 silly audit   semver: [ '6.3.1' ],
+57 silly audit   'node-releases': [ '2.0.53' ],
+57 silly audit   picocolors: [ '1.1.1' ],
+57 silly audit   picomatch: [ '4.0.5' ],
+57 silly audit   postcss: [ '8.5.26' ],
+57 silly audit   react: [ '18.3.1' ],
+57 silly audit   'react-dom': [ '18.3.1' ],
+57 silly audit   'react-refresh': [ '0.17.0' ],
+57 silly audit   'react-router': [ '6.30.4' ],
+57 silly audit   'react-router-dom': [ '6.30.4' ],
+57 silly audit   rollup: [ '4.62.4' ],
+57 silly audit   scheduler: [ '0.23.2' ],
+57 silly audit   'source-map-js': [ '1.2.1' ],
+57 silly audit   tinyglobby: [ '0.2.17' ],
+57 silly audit   tslib: [ '2.8.1' ],
+57 silly audit   tsx: [ '4.23.12' ],
+57 silly audit   typescript: [ '5.9.3' ],
+57 silly audit   'undici-types': [ '6.21.0' ],
+57 silly audit   'update-browserslist-db': [ '1.3.1' ],
+57 silly audit   vite: [ '6.4.3' ],
+57 silly audit   yallist: [ '3.1.1' ],
+57 silly audit   '@dnd-kit/core': [ '6.3.1' ],
+57 silly audit   '@dnd-kit/sortable': [ '10.0.0' ],
+57 silly audit   '@dnd-kit/utilities': [ '3.2.2' ],
+57 silly audit   '@dnd-kit/accessibility': [ '3.1.1' ]
+57 silly audit }
+58 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-x64-msvc
+59 silly reify mark deleted [
+59 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-x64-msvc'
+59 silly reify ]
+60 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-x64-gnu
+61 silly reify mark deleted [
+61 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-x64-gnu'
+61 silly reify ]
+62 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-ia32-msvc
+63 silly reify mark deleted [
+63 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-ia32-msvc'
+63 silly reify ]
+64 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-arm64-msvc
+65 silly reify mark deleted [
+65 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-arm64-msvc'
+65 silly reify ]
+66 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-openharmony-arm64
+67 silly reify mark deleted [
+67 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-openharmony-arm64'
+67 silly reify ]
+68 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-openbsd-x64
+69 silly reify mark deleted [
+69 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-openbsd-x64'
+69 silly reify ]
+70 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-x64-musl
+71 silly reify mark deleted [
+71 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-x64-musl'
+71 silly reify ]
+72 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-x64-gnu
+73 silly reify mark deleted [
+73 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-x64-gnu'
+73 silly reify ]
+74 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-s390x-gnu
+75 silly reify mark deleted [
+75 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-s390x-gnu'
+75 silly reify ]
+76 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-riscv64-musl
+77 silly reify mark deleted [
+77 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-riscv64-musl'
+77 silly reify ]
+78 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-riscv64-gnu
+79 silly reify mark deleted [
+79 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-riscv64-gnu'
+79 silly reify ]
+80 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-ppc64-musl
+81 silly reify mark deleted [
+81 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-ppc64-musl'
+81 silly reify ]
+82 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-ppc64-gnu
+83 silly reify mark deleted [
+83 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-ppc64-gnu'
+83 silly reify ]
+84 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-loong64-musl
+85 silly reify mark deleted [
+85 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-loong64-musl'
+85 silly reify ]
+86 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-loong64-gnu
+87 silly reify mark deleted [
+87 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-loong64-gnu'
+87 silly reify ]
+88 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm64-musl
+89 silly reify mark deleted [
+89 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm64-musl'
+89 silly reify ]
+90 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm64-gnu
+91 silly reify mark deleted [
+91 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm64-gnu'
+91 silly reify ]
+92 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm-musleabihf
+93 silly reify mark deleted [
+93 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm-musleabihf'
+93 silly reify ]
+94 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm-gnueabihf
+95 silly reify mark deleted [
+95 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm-gnueabihf'
+95 silly reify ]
+96 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-freebsd-x64
+97 silly reify mark deleted [
+97 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-freebsd-x64'
+97 silly reify ]
+98 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-freebsd-arm64
+99 silly reify mark deleted [
+99 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-freebsd-arm64'
+99 silly reify ]
+100 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-darwin-x64
+101 silly reify mark deleted [
+101 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-darwin-x64'
+101 silly reify ]
+102 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-android-arm64
+103 silly reify mark deleted [
+103 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-android-arm64'
+103 silly reify ]
+104 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-android-arm-eabi
+105 silly reify mark deleted [
+105 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-android-arm-eabi'
+105 silly reify ]
+106 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@napi-rs/lzma-linux-x64-gnu
+107 silly reify mark deleted [
+107 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@napi-rs/lzma-linux-x64-gnu'
+107 silly reify ]
+108 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-x64
+109 silly reify mark deleted [
+109 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-x64'
+109 silly reify ]
+110 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-ia32
+111 silly reify mark deleted [
+111 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-ia32'
+111 silly reify ]
+112 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-arm64
+113 silly reify mark deleted [
+113 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-arm64'
+113 silly reify ]
+114 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/sunos-x64
+115 silly reify mark deleted [
+115 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/sunos-x64'
+115 silly reify ]
+116 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openharmony-arm64
+117 silly reify mark deleted [
+117 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openharmony-arm64'
+117 silly reify ]
+118 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openbsd-x64
+119 silly reify mark deleted [
+119 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openbsd-x64'
+119 silly reify ]
+120 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openbsd-arm64
+121 silly reify mark deleted [
+121 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openbsd-arm64'
+121 silly reify ]
+122 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/netbsd-x64
+123 silly reify mark deleted [
+123 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/netbsd-x64'
+123 silly reify ]
+124 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/netbsd-arm64
+125 silly reify mark deleted [
+125 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/netbsd-arm64'
+125 silly reify ]
+126 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-x64
+127 silly reify mark deleted [
+127 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-x64'
+127 silly reify ]
+128 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-s390x
+129 silly reify mark deleted [
+129 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-s390x'
+129 silly reify ]
+130 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-riscv64
+131 silly reify mark deleted [
+131 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-riscv64'
+131 silly reify ]
+132 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-ppc64
+133 silly reify mark deleted [
+133 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-ppc64'
+133 silly reify ]
+134 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-mips64el
+135 silly reify mark deleted [
+135 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-mips64el'
+135 silly reify ]
+136 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-loong64
+137 silly reify mark deleted [
+137 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-loong64'
+137 silly reify ]
+138 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-ia32
+139 silly reify mark deleted [
+139 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-ia32'
+139 silly reify ]
+140 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-arm64
+141 silly reify mark deleted [
+141 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-arm64'
+141 silly reify ]
+142 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-arm
+143 silly reify mark deleted [
+143 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-arm'
+143 silly reify ]
+144 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/freebsd-x64
+145 silly reify mark deleted [
+145 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/freebsd-x64'
+145 silly reify ]
+146 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/freebsd-arm64
+147 silly reify mark deleted [
+147 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/freebsd-arm64'
+147 silly reify ]
+148 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/darwin-x64
+149 silly reify mark deleted [
+149 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/darwin-x64'
+149 silly reify ]
+150 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-x64
+151 silly reify mark deleted [
+151 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-x64'
+151 silly reify ]
+152 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-arm64
+153 silly reify mark deleted [
+153 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-arm64'
+153 silly reify ]
+154 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-arm
+155 silly reify mark deleted [
+155 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-arm'
+155 silly reify ]
+156 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/aix-ppc64
+157 silly reify mark deleted [
+157 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/aix-ppc64'
+157 silly reify ]
+158 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/win32-x64
+159 silly reify mark deleted [
+159 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/win32-x64'
+159 silly reify ]
+160 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/win32-ia32
+161 silly reify mark deleted [
+161 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/win32-ia32'
+161 silly reify ]
+162 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/win32-arm64
+163 silly reify mark deleted [
+163 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/win32-arm64'
+163 silly reify ]
+164 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/sunos-x64
+165 silly reify mark deleted [
+165 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/sunos-x64'
+165 silly reify ]
+166 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/openharmony-arm64
+167 silly reify mark deleted [
+167 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/openharmony-arm64'
+167 silly reify ]
+168 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/openbsd-x64
+169 silly reify mark deleted [
+169 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/openbsd-x64'
+169 silly reify ]
+170 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/openbsd-arm64
+171 silly reify mark deleted [
+171 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/openbsd-arm64'
+171 silly reify ]
+172 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/netbsd-x64
+173 silly reify mark deleted [
+173 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/netbsd-x64'
+173 silly reify ]
+174 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/netbsd-arm64
+175 silly reify mark deleted [
+175 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/netbsd-arm64'
+175 silly reify ]
+176 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-x64
+177 silly reify mark deleted [
+177 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-x64'
+177 silly reify ]
+178 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-s390x
+179 silly reify mark deleted [
+179 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-s390x'
+179 silly reify ]
+180 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-riscv64
+181 silly reify mark deleted [
+181 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-riscv64'
+181 silly reify ]
+182 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-ppc64
+183 silly reify mark deleted [
+183 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-ppc64'
+183 silly reify ]
+184 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-mips64el
+185 silly reify mark deleted [
+185 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-mips64el'
+185 silly reify ]
+186 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-loong64
+187 silly reify mark deleted [
+187 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-loong64'
+187 silly reify ]
+188 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-ia32
+189 silly reify mark deleted [
+189 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-ia32'
+189 silly reify ]
+190 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-arm64
+191 silly reify mark deleted [
+191 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-arm64'
+191 silly reify ]
+192 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-arm
+193 silly reify mark deleted [
+193 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-arm'
+193 silly reify ]
+194 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/freebsd-x64
+195 silly reify mark deleted [
+195 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/freebsd-x64'
+195 silly reify ]
+196 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/freebsd-arm64
+197 silly reify mark deleted [
+197 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/freebsd-arm64'
+197 silly reify ]
+198 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/darwin-x64
+199 silly reify mark deleted [
+199 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/darwin-x64'
+199 silly reify ]
+200 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/android-x64
+201 silly reify mark deleted [
+201 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/android-x64'
+201 silly reify ]
+202 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/android-arm64
+203 silly reify mark deleted [
+203 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/android-arm64'
+203 silly reify ]
+204 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/android-arm
+205 silly reify mark deleted [
+205 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/android-arm'
+205 silly reify ]
+206 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/aix-ppc64
+207 silly reify mark deleted [
+207 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/aix-ppc64'
+207 silly reify ]
+208 http cache @dnd-kit/accessibility@https://registry.npmjs.org/@dnd-kit/accessibility/-/accessibility-3.1.1.tgz 0ms (cache hit)
+209 http cache @dnd-kit/utilities@https://registry.npmjs.org/@dnd-kit/utilities/-/utilities-3.2.2.tgz 0ms (cache hit)
+210 http cache @dnd-kit/sortable@https://registry.npmjs.org/@dnd-kit/sortable/-/sortable-10.0.0.tgz 0ms (cache hit)
+211 http cache @dnd-kit/core@https://registry.npmjs.org/@dnd-kit/core/-/core-6.3.1.tgz 0ms (cache hit)
+212 silly tarball no local data for @dnd-kit/accessibility@https://registry.npmjs.org/@dnd-kit/accessibility/-/accessibility-3.1.1.tgz. Extracting by manifest.
+213 silly tarball no local data for @dnd-kit/utilities@https://registry.npmjs.org/@dnd-kit/utilities/-/utilities-3.2.2.tgz. Extracting by manifest.
+214 silly tarball no local data for @dnd-kit/sortable@https://registry.npmjs.org/@dnd-kit/sortable/-/sortable-10.0.0.tgz. Extracting by manifest.
+215 silly tarball no local data for @dnd-kit/core@https://registry.npmjs.org/@dnd-kit/core/-/core-6.3.1.tgz. Extracting by manifest.
+216 http fetch GET 200 https://registry.npmjs.org/@dnd-kit/sortable/-/sortable-10.0.0.tgz 84ms (cache miss)
+217 http fetch GET 200 https://registry.npmjs.org/@dnd-kit/accessibility/-/accessibility-3.1.1.tgz 85ms (cache miss)
+218 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 95ms
+219 silly audit report {
+219 silly audit report   'react-router': [
+219 silly audit report     {
+219 silly audit report       id: 1124268,
+219 silly audit report       url: 'https://github.com/advisories/GHSA-wrjc-x8rr-h8h6',
+219 silly audit report       title: 'React Router: Open redirect via backslash in <Link> and useNavigate (CVE-2025-68470 bypass)',
+219 silly audit report       severity: 'moderate',
+219 silly audit report       vulnerable_versions: '>=6.0.0 <7.18.0',
+219 silly audit report       cwe: [Array],
+219 silly audit report       cvss: [Object]
+219 silly audit report     },
+219 silly audit report     {
+219 silly audit report       id: 1124272,
+219 silly audit report       url: 'https://github.com/advisories/GHSA-337j-9hxr-rhxg',
+219 silly audit report       title: 'React Router: Arbitrary Constructor Injection via deserializeErrors() in React Router SSR Hydration',
+219 silly audit report       severity: 'moderate',
+219 silly audit report       vulnerable_versions: '>=6.4.0 <7.18.0',
+219 silly audit report       cwe: [Array],
+219 silly audit report       cvss: [Object]
+219 silly audit report     }
+219 silly audit report   ],
+219 silly audit report   'react-router-dom': [
+219 silly audit report     {
+219 silly audit report       id: 1124270,
+219 silly audit report       url: 'https://github.com/advisories/GHSA-jjmj-jmhj-qwj2',
+219 silly audit report       title: 'React Router: Open redirect leading to XSS',
+219 silly audit report       severity: 'moderate',
+219 silly audit report       vulnerable_versions: '>=6.30.2 <=6.30.4',
+219 silly audit report       cwe: [Array],
+219 silly audit report       cvss: [Object]
+219 silly audit report     }
+219 silly audit report   ]
+219 silly audit report }
+220 silly packumentCache corgi:https://registry.npmjs.org/react-router cache-miss
+221 silly packumentCache corgi:https://registry.npmjs.org/react-router-dom cache-miss
+222 http fetch GET 200 https://registry.npmjs.org/@dnd-kit/utilities/-/utilities-3.2.2.tgz 93ms (cache miss)
+223 http fetch GET 200 https://registry.npmjs.org/@dnd-kit/core/-/core-6.3.1.tgz 110ms (cache miss)
+224 http fetch GET 200 https://registry.npmjs.org/react-router-dom 65ms (cache revalidated)
+225 silly packumentCache corgi:https://registry.npmjs.org/react-router-dom set size:1062690 disposed:false
+226 http fetch GET 200 https://registry.npmjs.org/react-router 98ms (cache revalidated)
+227 silly packumentCache corgi:https://registry.npmjs.org/react-router set size:1352188 disposed:false
+228 silly ADD node_modules/@dnd-kit/accessibility
+229 silly ADD node_modules/@dnd-kit/utilities
+230 silly ADD node_modules/@dnd-kit/sortable
+231 silly ADD node_modules/@dnd-kit/core
+232 silly ADD
+233 silly ADD
+234 silly ADD
+235 silly ADD
+236 silly ADD
+237 silly ADD
+238 silly ADD
+239 silly ADD
+240 silly ADD
+241 silly ADD
+242 silly ADD
+243 silly ADD
+244 silly ADD
+245 silly ADD
+246 silly ADD
+247 silly ADD
+248 silly ADD
+249 silly ADD
+250 silly ADD
+251 silly ADD
+252 silly ADD
+253 silly ADD
+254 silly ADD
+255 silly ADD
+256 silly ADD
+257 silly ADD
+258 silly ADD
+259 silly ADD
+260 silly ADD
+261 silly ADD
+262 silly ADD
+263 silly ADD
+264 silly ADD
+265 silly ADD
+266 silly ADD
+267 silly ADD
+268 silly ADD
+269 silly ADD
+270 silly ADD
+271 silly ADD
+272 silly ADD
+273 silly ADD
+274 silly ADD
+275 silly ADD
+276 silly ADD
+277 silly ADD
+278 silly ADD
+279 silly ADD
+280 silly ADD
+281 silly ADD
+282 silly ADD
+283 silly ADD
+284 silly ADD
+285 silly ADD
+286 silly ADD
+287 silly ADD
+288 silly ADD
+289 silly ADD
+290 silly ADD
+291 silly ADD
+292 silly ADD
+293 silly ADD
+294 silly ADD
+295 silly ADD
+296 silly ADD
+297 silly ADD
+298 silly ADD
+299 silly ADD
+300 silly ADD
+301 silly ADD
+302 silly ADD
+303 silly ADD
+304 silly ADD
+305 silly ADD
+306 silly ADD
+307 verbose cwd /Users/nivethaniruthayanathan/Code/Cantask
+308 verbose os Darwin 24.6.0
+309 verbose node v23.7.0
+310 verbose npm  v10.9.2
+311 verbose exit 0
+312 info ok

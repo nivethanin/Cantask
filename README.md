@@ -34,7 +34,7 @@ npm install --cache .npm-cache
 npm run dev
 ```
 
-This command now auto-cleans port `4000` if a stale API process is still running.
+This command auto-cleans stale API processes on ports `4000` and `4001` before starting the app.
 
 3. Open the frontend:
 
@@ -42,7 +42,7 @@ This command now auto-cleans port `4000` if a stale API process is still running
 
 4. API base URL (default):
 
-- `http://localhost:4000/api`
+- `http://localhost:4001/api`
 
 ## App structure
 
@@ -69,4 +69,10 @@ This command now auto-cleans port `4000` if a stale API process is still running
 
 ```bash
 npm run dev:clean
+```
+
+- You can also override the API port manually:
+
+```bash
+PORT=4010 npm run dev --workspace @cantask/api
 ```

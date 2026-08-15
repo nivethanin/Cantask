@@ -7,7 +7,7 @@ import { db } from "./db.js";
 type TaskState = "planned" | "working_on" | "done";
 
 const app = express();
-const port = Number(process.env.PORT || 4000);
+const port = Number(process.env.PORT || 4001);
 
 app.use(cors());
 app.use(express.json());

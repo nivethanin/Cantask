@@ -127,7 +127,18 @@ button:disabled {
 }
 
 .inline-form {
-  grid-template-columns: 1fr auto;
+  display: flex;
+  align-items: stretch;
+  gap: 0.7rem;
+}
+
+.inline-form > * {
+  flex: 1 1 auto;
+}
+
+.inline-form button {
+  flex: 0 0 auto;
+  min-width: 7rem;
 }
 
 .stacked-form label {
@@ -171,6 +182,13 @@ button:disabled {
   border: 1px solid var(--line);
   border-radius: 1rem;
   padding: 1rem;
+  min-height: 18rem;
+  display: grid;
+  align-content: start;
+}
+
+.tool-card h2 {
+  margin: 0;
 }
 
 .chip-row {
@@ -184,6 +202,22 @@ button:disabled {
   padding: 0.2rem 0.65rem;
   border-radius: 999px;
   font-size: 0.9rem;
+}
+
+.selectable-chip {
+  background: #dfe0df;
+  border: 1px solid #c9cec7;
+  color: #6d736d;
+  padding: 0.5rem 0.8rem;
+}
+
+.selectable-chip:hover {
+  background: #d4d7d4;
+}
+
+.compact-picker {
+  min-height: 2.5rem;
+  align-items: center;
 }
 
 .removable-chip {
@@ -250,10 +284,24 @@ button:disabled {
 
 .task-draggable {
   cursor: grab;
+  touch-action: none;
 }
 
 .task-draggable:active {
   cursor: grabbing;
+}
+
+.task-draggable.dragging {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.task-drag-overlay {
+  width: min(18rem, calc(100vw - 2rem));
+  transform: scale(0.92);
+  opacity: 0.92;
+  box-shadow: 0 16px 30px rgba(31, 42, 31, 0.18);
+  pointer-events: none;
 }
 
 .task-preview {

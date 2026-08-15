@@ -1,3 +1,19 @@
+import { CSS } from "@dnd-kit/utilities";
+import {
+  closestCorners,
+  DndContext,
+  DragOverlay,
+  KeyboardSensor,
+  PointerSensor,
+  TouchSensor,
+  useDraggable,
+  useDroppable,
+  useSensor,
+  useSensors,
+  type DragEndEvent,
+  type DragStartEvent
+} from "@dnd-kit/core";
+import { SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import { FormEvent, KeyboardEvent, useEffect, useMemo, useState } from "react";
 import { Navigate, Route, Routes, useNavigate, useParams } from "react-router-dom";
 
@@ -23,7 +39,7 @@ type BoardPayload = {
   tasks: Task[];
 };
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:4000/api";
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:4001/api";
 
 const stateLabels: Record<TaskState, string> = {
   planned: "Planned",
@@ -123,6 +139,103 @@ function LandingPage() {
   );
 }
 
+function TaskCardContent({ task, onDelete }: { task: Task; onDelete?: (taskId: string) => void }) {
+  return (
+    <>
+      <div className="task-head">
+        <h3>{task.title}</h3>
+        {onDelete ? (
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              onDelete(task.id);
+            }}
+          >
+            Delete
+          </button>
+        ) : null}
+      </div>
+      <p className="task-preview">{task.description || "No description yet."}</p>
+      <div className="chip-row">
+        {task.assignees.map((person) => (
+          <span className="chip" key={person.id}>
+            {person.name}
+          </span>
+        ))}
+      </div>
+    </>
+  );
+}
+
+function SortableTaskCard({
+  task,
+  onOpen,
+  onDelete
+}: {
+  task: Task;
+  onOpen: (taskId: string) => void;
+  onDelete: (taskId: string) => void;
+}) {
+  const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
+    id: task.id
+  });
+
+  const style = {
+    transform: CSS.Transform.toString(transform)
+  };
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      className={`task-card task-draggable ${isDragging ? "dragging" : ""}`}
+      aria-label={`Task ${task.title}`}
+      onClick={() => onOpen(task.id)}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onOpen(task.id);
+        }
+      }}
+      draggable={false}
+      {...listeners}
+      {...attributes}
+    >
+      <TaskCardContent task={task} onDelete={onDelete} />
+    </div>
+  );
+}
+
+function ColumnDropZone({
+  state,
+  tasks,
+  onOpen,
+  onDelete
+}: {
+  state: TaskState;
+  tasks: Task[];
+  onOpen: (taskId: string) => void;
+  onDelete: (taskId: string) => void;
+}) {
+  const { isOver, setNodeRef } = useDroppable({
+    id: state,
+    data: { type: "column", state }
+  });
+
+  return (
+    <article ref={setNodeRef} className={`column ${isOver ? "column-drop-target" : ""}`} key={state}>
+      <h2>{stateLabels[state]}</h2>
+      <SortableContext items={tasks.map((task) => task.id)} strategy={verticalListSortingStrategy}>
+        {tasks.map((task) => (
+          <SortableTaskCard key={task.id} task={task} onOpen={onOpen} onDelete={onDelete} />
+        ))}
+      </SortableContext>
+      {tasks.length === 0 ? <p className="empty-column">No tasks yet.</p> : null}
+    </article>
+  );
+}
+
 function BoardPage() {
   const { code = "" } = useParams();
   const normalizedCode = code.toUpperCase();
@@ -137,10 +250,8 @@ function BoardPage() {
   const [createAssigneeCandidate, setCreateAssigneeCandidate] = useState("");
   const [participantName, setParticipantName] = useState("");
 
-  const [dragTaskId, setDragTaskId] = useState<string | null>(null);
-  const [dragOverState, setDragOverState] = useState<TaskState | null>(null);
-
   const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
+  const [activeTaskId, setActiveTaskId] = useState<string | null>(null);
   const [detailTitle, setDetailTitle] = useState("");
   const [detailDescription, setDetailDescription] = useState("");
   const [detailState, setDetailState] = useState<TaskState>("planned");
@@ -150,6 +261,11 @@ function BoardPage() {
   const selectedTask = useMemo(
     () => board?.tasks.find((task) => task.id === selectedTaskId) ?? null,
     [board, selectedTaskId]
+  );
+
+  const activeTask = useMemo(
+    () => board?.tasks.find((task) => task.id === activeTaskId) ?? null,
+    [board, activeTaskId]
   );
 
   useEffect(() => {
@@ -162,7 +278,7 @@ function BoardPage() {
     setDetailState(selectedTask.state);
     setDetailAssigneeIds(selectedTask.assignees.map((person) => person.id));
     setDetailAssigneeCandidate("");
-  }, [selectedTask]);
+  }, [selectedTaskId]);
 
   async function loadBoard() {
     try {
@@ -177,11 +293,13 @@ function BoardPage() {
   useEffect(() => {
     void loadBoard();
     const timer = window.setInterval(() => {
-      void loadBoard();
-    }, 4000);
+      if (!selectedTaskId) {
+        void loadBoard();
+      }
+    }, 15000);
 
     return () => window.clearInterval(timer);
-  }, [normalizedCode]);
+  }, [normalizedCode, selectedTaskId]);
 
   const groupedTasks = useMemo(() => {
     const groups: Record<TaskState, Task[]> = {
@@ -195,6 +313,23 @@ function BoardPage() {
     }
     return groups;
   }, [board]);
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 8
+      }
+    }),
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 100,
+        tolerance: 8
+      }
+    }),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates
+    })
+  );
 
   if (error && !board) {
     return (
@@ -285,6 +420,40 @@ function BoardPage() {
     }
   }
 
+  function handleDragStart(event: DragStartEvent) {
+    setActiveTaskId(String(event.active.id));
+  }
+
+  function handleDragEnd(event: DragEndEvent) {
+    const { active, over } = event;
+    setActiveTaskId(null);
+
+    if (!board || !active || !over) {
+      return;
+    }
+
+    const activeId = String(active.id);
+    const overId = String(over.id);
+
+    const activeTask = board.tasks.find((task) => task.id === activeId);
+    if (!activeTask) {
+      return;
+    }
+
+    let nextState = activeTask.state;
+
+    const overTask = board.tasks.find((task) => task.id === overId);
+    if (overTask) {
+      nextState = overTask.state;
+    } else if (stateOrder.includes(overId as TaskState)) {
+      nextState = overId as TaskState;
+    }
+
+    if (nextState !== activeTask.state) {
+      void moveTask(activeId, nextState);
+    }
+  }
+
   async function deleteTask(taskId: string) {
     try {
       await api(`/boards/${boardCode}/tasks/${taskId}`, {
@@ -311,6 +480,7 @@ function BoardPage() {
         state: detailState,
         assigneeIds: detailAssigneeIds
       });
+      setSelectedTaskId(null);
       await loadBoard();
     } catch (requestError) {
       setError(requestError instanceof Error ? requestError.message : "Could not save task details");
@@ -460,74 +630,33 @@ function BoardPage() {
         </form>
       </section>
 
-      <section className="columns-wrap" aria-label="Kanban columns">
-        {stateOrder.map((state) => (
-          <article
-            className={`column ${dragOverState === state ? "column-drop-target" : ""}`}
-            key={state}
-            onDragOver={(event) => {
-              event.preventDefault();
-              setDragOverState(state);
-            }}
-            onDragLeave={() => {
-              setDragOverState((current) => (current === state ? null : current));
-            }}
-            onDrop={(event) => {
-              event.preventDefault();
-              const droppedTaskId = event.dataTransfer.getData("text/plain") || dragTaskId;
-              setDragOverState(null);
-              setDragTaskId(null);
-              if (droppedTaskId) {
-                void moveTask(droppedTaskId, state);
-              }
-            }}
-          >
-            <h2>{stateLabels[state]}</h2>
-            {groupedTasks[state].map((task) => (
-              <div
-                className="task-card task-draggable"
-                key={task.id}
-                draggable
-                onDragStart={(event) => {
-                  event.dataTransfer.setData("text/plain", task.id);
-                  event.dataTransfer.effectAllowed = "move";
-                  setDragTaskId(task.id);
-                }}
-                onDragEnd={() => {
-                  setDragTaskId(null);
-                  setDragOverState(null);
-                }}
-                role="button"
-                tabIndex={0}
-                onClick={() => setSelectedTaskId(task.id)}
-                onKeyDown={(event) => onTaskCardKey(event, task.id)}
-              >
-                <div className="task-head">
-                  <h3>{task.title}</h3>
-                  <button
-                    type="button"
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      void deleteTask(task.id);
-                    }}
-                  >
-                    Delete
-                  </button>
-                </div>
-                <p className="task-preview">{task.description || "No description yet."}</p>
-                <div className="chip-row">
-                  {task.assignees.map((person) => (
-                    <span className="chip" key={person.id}>
-                      {person.name}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-            {groupedTasks[state].length === 0 ? <p className="empty-column">No tasks yet.</p> : null}
-          </article>
-        ))}
-      </section>
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCorners}
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEnd}
+        onDragCancel={() => setActiveTaskId(null)}
+      >
+        <section className="columns-wrap" aria-label="Kanban columns">
+          {stateOrder.map((state) => (
+            <ColumnDropZone
+              key={state}
+              state={state}
+              tasks={groupedTasks[state]}
+              onOpen={setSelectedTaskId}
+              onDelete={deleteTask}
+            />
+          ))}
+        </section>
+
+        <DragOverlay>
+          {activeTask ? (
+            <div className="task-card task-drag-overlay">
+              <TaskCardContent task={activeTask} />
+            </div>
+          ) : null}
+        </DragOverlay>
+      </DndContext>
 
       {selectedTask ? (
         <div className="detail-overlay" onClick={() => setSelectedTaskId(null)}>
@@ -567,29 +696,18 @@ function BoardPage() {
 
             <div className="assignee-picker">
               <p className="picker-title">Assigned</p>
-              <div className="inline-form">
-                <select
-                  value={detailAssigneeCandidate}
-                  onChange={(event) => setDetailAssigneeCandidate(event.target.value)}
-                >
-                  <option value="">Select participant</option>
-                  {detailCandidatePeople.map((person) => (
-                    <option key={person.id} value={person.id}>
-                      {person.name}
-                    </option>
-                  ))}
-                </select>
+              <div className="chip-row compact-picker">
+              {detailCandidatePeople.map((person) => (
                 <button
                   type="button"
-                  onClick={() => {
-                    if (detailAssigneeCandidate) {
-                      addDetailAssignee(detailAssigneeCandidate);
-                    }
-                  }}
+                  className="chip selectable-chip"
+                  key={person.id}
+                  onClick={() => addDetailAssignee(person.id)}
                 >
-                  Add
+                  {person.name}
                 </button>
-              </div>
+              ))}
+            </div>
               <div className="chip-row">
                 {detailSelectedPeople.map((person) => (
                   <button

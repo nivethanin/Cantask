@@ -5,9 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run dev:clean && concurrently \"npm run dev:api\" \"npm run dev:web\"",
-    "dev:clean": "sh -c 'PIDS=$(lsof -tiTCP:4000 -sTCP:LISTEN 2>/dev/null); if [ -n \"$PIDS\" ]; then echo \"Stopping process on port 4000: $PIDS\"; echo \"$PIDS\" | xargs kill; fi'",
-    "dev:api": "npm run dev --workspace @cantask/api",
-    "dev:web": "npm run dev --workspace @cantask/web"
+    "dev:clean": "sh -c 'PIDS=$(lsof -tiTCP:4000 -sTCP:LISTEN 2>/dev/null; lsof -tiTCP:4001 -sTCP:LISTEN 2>/dev/null); if [ -n \"$PIDS\" ]; then echo \"Stopping stale API processes: $PIDS\"; echo \"$PIDS\" | xargs -r kill -9; fi'",
+    "dev:api": "PORT=4001 npm run dev --workspace @cantask/api",
+    "dev:web": "npm run dev --workspace @cantask/web -- --host"
   },
   "keywords": [],
   "author": "",
