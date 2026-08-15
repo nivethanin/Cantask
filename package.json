@@ -1,0 +1,23 @@
+{
+  "name": "cantask",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run dev:clean && concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:clean": "sh -c 'PIDS=$(lsof -tiTCP:4000 -sTCP:LISTEN 2>/dev/null); if [ -n \"$PIDS\" ]; then echo \"Stopping process on port 4000: $PIDS\"; echo \"$PIDS\" | xargs kill; fi'",
+    "dev:api": "npm run dev --workspace @cantask/api",
+    "dev:web": "npm run dev --workspace @cantask/web"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}

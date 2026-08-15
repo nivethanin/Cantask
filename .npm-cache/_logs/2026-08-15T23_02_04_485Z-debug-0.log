@@ -1,0 +1,313 @@
+0 verbose cli /opt/homebrew/Cellar/node/23.7.0/bin/node /opt/homebrew/bin/npm
+1 info using npm@10.9.2
+2 info using node@v23.7.0
+3 silly config load:file:/opt/homebrew/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/nivethaniruthayanathan/Code/Cantask/.npmrc
+5 silly config load:file:/Users/nivethaniruthayanathan/.npmrc
+6 silly config load:file:/opt/homebrew/etc/npmrc
+7 verbose title npm install @types/better-sqlite3
+8 verbose argv "install" "--save-dev" "@types/better-sqlite3" "--workspace" "@cantask/api" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:/Users/nivethaniruthayanathan/Code/Cantask/.npm-cache/_logs/2026-08-15T23_02_04_485Z-
+10 verbose logfile /Users/nivethaniruthayanathan/Code/Cantask/.npm-cache/_logs/2026-08-15T23_02_04_485Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: apps/api
+14 silly idealTree buildDeps
+15 silly fetch manifest @types/better-sqlite3@*
+16 silly packumentCache full:https://registry.npmjs.org/@types%2fbetter-sqlite3 cache-miss
+17 http fetch GET 200 https://registry.npmjs.org/@types%2fbetter-sqlite3 222ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/@types%2fbetter-sqlite3 set size:undefined disposed:false
+19 silly placeDep ROOT @types/better-sqlite3@9.6.0 OK for: @cantask/api@1.0.0 want: *
+20 silly reify moves {}
+21 silly audit bulk request {
+21 silly audit   '@cantask/api': [ '1.0.0' ],
+21 silly audit   '@esbuild/aix-ppc64': [ '0.28.2' ],
+21 silly audit   '@esbuild/android-arm': [ '0.28.2' ],
+21 silly audit   '@esbuild/android-arm64': [ '0.28.2' ],
+21 silly audit   '@esbuild/android-x64': [ '0.28.2' ],
+21 silly audit   '@esbuild/darwin-arm64': [ '0.28.2' ],
+21 silly audit   '@esbuild/darwin-x64': [ '0.28.2' ],
+21 silly audit   '@esbuild/freebsd-arm64': [ '0.28.2' ],
+21 silly audit   '@esbuild/freebsd-x64': [ '0.28.2' ],
+21 silly audit   '@esbuild/linux-arm': [ '0.28.2' ],
+21 silly audit   '@esbuild/linux-arm64': [ '0.28.2' ],
+21 silly audit   '@esbuild/linux-ia32': [ '0.28.2' ],
+21 silly audit   '@esbuild/linux-loong64': [ '0.28.2' ],
+21 silly audit   '@esbuild/linux-mips64el': [ '0.28.2' ],
+21 silly audit   '@esbuild/linux-ppc64': [ '0.28.2' ],
+21 silly audit   '@esbuild/linux-riscv64': [ '0.28.2' ],
+21 silly audit   '@esbuild/linux-s390x': [ '0.28.2' ],
+21 silly audit   '@esbuild/linux-x64': [ '0.28.2' ],
+21 silly audit   '@esbuild/netbsd-arm64': [ '0.28.2' ],
+21 silly audit   '@esbuild/netbsd-x64': [ '0.28.2' ],
+21 silly audit   '@esbuild/openbsd-arm64': [ '0.28.2' ],
+21 silly audit   '@esbuild/openbsd-x64': [ '0.28.2' ],
+21 silly audit   '@esbuild/openharmony-arm64': [ '0.28.2' ],
+21 silly audit   '@esbuild/sunos-x64': [ '0.28.2' ],
+21 silly audit   '@esbuild/win32-arm64': [ '0.28.2' ],
+21 silly audit   '@esbuild/win32-ia32': [ '0.28.2' ],
+21 silly audit   '@esbuild/win32-x64': [ '0.28.2' ],
+21 silly audit   '@types/body-parser': [ '1.19.6' ],
+21 silly audit   '@types/connect': [ '3.4.38' ],
+21 silly audit   '@types/cors': [ '2.8.19' ],
+21 silly audit   '@types/express': [ '4.17.25' ],
+21 silly audit   '@types/express-serve-static-core': [ '4.19.9' ],
+21 silly audit   '@types/http-errors': [ '2.0.5' ],
+21 silly audit   '@types/mime': [ '1.3.5' ],
+21 silly audit   '@types/node': [ '22.20.1' ],
+21 silly audit   '@types/qs': [ '6.15.1' ],
+21 silly audit   '@types/range-parser': [ '1.2.7' ],
+21 silly audit   '@types/send': [ '1.2.1', '0.17.6' ],
+21 silly audit   '@types/serve-static': [ '1.15.10' ],
+21 silly audit   accepts: [ '1.3.8' ],
+21 silly audit   'array-flatten': [ '1.1.1' ],
+21 silly audit   'base64-js': [ '1.5.1' ],
+21 silly audit   'better-sqlite3': [ '11.10.0' ],
+21 silly audit   bindings: [ '1.5.0' ],
+21 silly audit   bl: [ '4.1.0' ],
+21 silly audit   'body-parser': [ '1.20.6' ],
+21 silly audit   debug: [ '2.6.9' ],
+21 silly audit   ms: [ '2.0.0', '2.1.3' ],
+21 silly audit   buffer: [ '5.7.1' ],
+21 silly audit   bytes: [ '3.1.2' ],
+21 silly audit   'call-bind-apply-helpers': [ '1.0.2' ],
+21 silly audit   'call-bound': [ '1.0.4' ],
+21 silly audit   chownr: [ '1.1.4' ],
+21 silly audit   'content-disposition': [ '0.5.4' ],
+21 silly audit   'content-type': [ '1.0.5' ],
+21 silly audit   cookie: [ '0.7.2' ],
+21 silly audit   'cookie-signature': [ '1.0.7' ],
+21 silly audit   cors: [ '2.8.6' ],
+21 silly audit   'decompress-response': [ '6.0.0' ],
+21 silly audit   'deep-extend': [ '0.6.0' ],
+21 silly audit   depd: [ '2.0.0' ],
+21 silly audit   destroy: [ '1.2.0' ],
+21 silly audit   'detect-libc': [ '2.1.2' ],
+21 silly audit   'dunder-proto': [ '1.0.1' ],
+21 silly audit   'ee-first': [ '1.1.1' ],
+21 silly audit   encodeurl: [ '2.0.0' ],
+21 silly audit   'end-of-stream': [ '1.4.5' ],
+21 silly audit   'es-define-property': [ '1.0.1' ],
+21 silly audit   'es-errors': [ '1.3.0' ],
+21 silly audit   'es-object-atoms': [ '1.1.2' ],
+21 silly audit   esbuild: [ '0.28.2' ],
+21 silly audit   'escape-html': [ '1.0.3' ],
+21 silly audit   etag: [ '1.8.1' ],
+21 silly audit   'expand-template': [ '2.0.3' ],
+21 silly audit   express: [ '4.22.2' ],
+21 silly audit   'file-uri-to-path': [ '1.0.0' ],
+21 silly audit   finalhandler: [ '1.3.2' ],
+21 silly audit   forwarded: [ '0.2.0' ],
+21 silly audit   fresh: [ '0.5.2' ],
+21 silly audit   'fs-constants': [ '1.0.0' ],
+21 silly audit   fsevents: [ '2.3.3' ],
+21 silly audit   'function-bind': [ '1.1.2' ],
+21 silly audit   'get-intrinsic': [ '1.3.0' ],
+21 silly audit   'get-proto': [ '1.0.1' ],
+21 silly audit   'github-from-package': [ '0.0.0' ],
+21 silly audit   gopd: [ '1.2.0' ],
+21 silly audit   'has-symbols': [ '1.1.0' ],
+21 silly audit   hasown: [ '2.0.4' ],
+21 silly audit   'http-errors': [ '2.0.1' ],
+21 silly audit   'iconv-lite': [ '0.4.24' ],
+21 silly audit   ieee754: [ '1.2.1' ],
+21 silly audit   inherits: [ '2.0.4' ],
+21 silly audit   ini: [ '1.3.8' ],
+21 silly audit   'ipaddr.js': [ '1.9.1' ],
+21 silly audit   'math-intrinsics': [ '1.1.0' ],
+21 silly audit   'media-typer': [ '0.3.0' ],
+21 silly audit   'merge-descriptors': [ '1.0.3' ],
+21 silly audit   methods: [ '1.1.2' ],
+21 silly audit   mime: [ '1.6.0' ],
+21 silly audit   'mime-db': [ '1.52.0' ],
+21 silly audit   'mime-types': [ '2.1.35' ],
+21 silly audit   'mimic-response': [ '3.1.0' ],
+21 silly audit   minimist: [ '1.2.8' ],
+21 silly audit   'mkdirp-classic': [ '0.5.3' ],
+21 silly audit   'napi-build-utils': [ '2.0.0' ],
+21 silly audit   negotiator: [ '0.6.3' ],
+21 silly audit   'node-abi': [ '3.94.0' ],
+21 silly audit   semver: [ '7.8.5' ],
+21 silly audit   'object-assign': [ '4.1.1' ],
+21 silly audit   'object-inspect': [ '1.13.4' ],
+21 silly audit   'on-finished': [ '2.4.1' ],
+21 silly audit   once: [ '1.4.0' ],
+21 silly audit   parseurl: [ '1.3.3' ],
+21 silly audit   'path-to-regexp': [ '0.1.13' ],
+21 silly audit   'prebuild-install': [ '7.1.3' ],
+21 silly audit   'proxy-addr': [ '2.0.7' ],
+21 silly audit   pump: [ '3.0.4' ],
+21 silly audit   qs: [ '6.15.3' ],
+21 silly audit   'range-parser': [ '1.2.1' ],
+21 silly audit   'raw-body': [ '2.5.3' ],
+21 silly audit   rc: [ '1.2.8' ],
+21 silly audit   'readable-stream': [ '3.6.2' ],
+21 silly audit   'safe-buffer': [ '5.2.1' ],
+21 silly audit   'safer-buffer': [ '2.1.2' ],
+21 silly audit   send: [ '0.19.2' ],
+21 silly audit   'serve-static': [ '1.16.3' ],
+21 silly audit   setprototypeof: [ '1.2.0' ],
+21 silly audit   'side-channel': [ '1.1.1' ],
+21 silly audit   'side-channel-list': [ '1.0.1' ],
+21 silly audit   'side-channel-map': [ '1.0.1' ],
+21 silly audit   'side-channel-weakmap': [ '1.0.2' ],
+21 silly audit   'simple-concat': [ '1.0.1' ],
+21 silly audit   'simple-get': [ '4.0.1' ],
+21 silly audit   statuses: [ '2.0.2' ],
+21 silly audit   string_decoder: [ '1.3.0' ],
+21 silly audit   'strip-json-comments': [ '2.0.1' ],
+21 silly audit   'tar-fs': [ '2.1.5' ],
+21 silly audit   'tar-stream': [ '2.2.0' ],
+21 silly audit   toidentifier: [ '1.0.1' ],
+21 silly audit   tsx: [ '4.23.12' ],
+21 silly audit   'tunnel-agent': [ '0.6.0' ],
+21 silly audit   'type-is': [ '1.6.18' ],
+21 silly audit   typescript: [ '5.9.3' ],
+21 silly audit   'undici-types': [ '6.21.0' ],
+21 silly audit   unpipe: [ '1.0.0' ],
+21 silly audit   'util-deprecate': [ '1.0.2' ],
+21 silly audit   'utils-merge': [ '1.0.1' ],
+21 silly audit   vary: [ '1.1.2' ],
+21 silly audit   wrappy: [ '1.0.2' ],
+21 silly audit   zod: [ '3.25.76' ],
+21 silly audit   '@types/better-sqlite3': [ '9.6.0' ]
+21 silly audit }
+22 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-x64
+23 silly reify mark deleted [
+23 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-x64'
+23 silly reify ]
+24 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-ia32
+25 silly reify mark deleted [
+25 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-ia32'
+25 silly reify ]
+26 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-arm64
+27 silly reify mark deleted [
+27 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-arm64'
+27 silly reify ]
+28 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/sunos-x64
+29 silly reify mark deleted [
+29 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/sunos-x64'
+29 silly reify ]
+30 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openharmony-arm64
+31 silly reify mark deleted [
+31 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openharmony-arm64'
+31 silly reify ]
+32 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openbsd-x64
+33 silly reify mark deleted [
+33 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openbsd-x64'
+33 silly reify ]
+34 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openbsd-arm64
+35 silly reify mark deleted [
+35 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openbsd-arm64'
+35 silly reify ]
+36 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/netbsd-x64
+37 silly reify mark deleted [
+37 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/netbsd-x64'
+37 silly reify ]
+38 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/netbsd-arm64
+39 silly reify mark deleted [
+39 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/netbsd-arm64'
+39 silly reify ]
+40 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-x64
+41 silly reify mark deleted [
+41 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-x64'
+41 silly reify ]
+42 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-s390x
+43 silly reify mark deleted [
+43 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-s390x'
+43 silly reify ]
+44 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-riscv64
+45 silly reify mark deleted [
+45 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-riscv64'
+45 silly reify ]
+46 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-ppc64
+47 silly reify mark deleted [
+47 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-ppc64'
+47 silly reify ]
+48 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-mips64el
+49 silly reify mark deleted [
+49 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-mips64el'
+49 silly reify ]
+50 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-loong64
+51 silly reify mark deleted [
+51 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-loong64'
+51 silly reify ]
+52 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-ia32
+53 silly reify mark deleted [
+53 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-ia32'
+53 silly reify ]
+54 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-arm64
+55 silly reify mark deleted [
+55 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-arm64'
+55 silly reify ]
+56 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-arm
+57 silly reify mark deleted [
+57 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-arm'
+57 silly reify ]
+58 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/freebsd-x64
+59 silly reify mark deleted [
+59 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/freebsd-x64'
+59 silly reify ]
+60 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/freebsd-arm64
+61 silly reify mark deleted [
+61 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/freebsd-arm64'
+61 silly reify ]
+62 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/darwin-x64
+63 silly reify mark deleted [
+63 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/darwin-x64'
+63 silly reify ]
+64 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-x64
+65 silly reify mark deleted [
+65 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-x64'
+65 silly reify ]
+66 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-arm64
+67 silly reify mark deleted [
+67 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-arm64'
+67 silly reify ]
+68 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-arm
+69 silly reify mark deleted [
+69 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-arm'
+69 silly reify ]
+70 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/aix-ppc64
+71 silly reify mark deleted [
+71 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/aix-ppc64'
+71 silly reify ]
+72 http cache @types/better-sqlite3@https://registry.npmjs.org/@types/better-sqlite3/-/better-sqlite3-9.6.0.tgz 0ms (cache hit)
+73 http cache fsevents@https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz 0ms (cache hit)
+74 silly tarball no local data for @types/better-sqlite3@https://registry.npmjs.org/@types/better-sqlite3/-/better-sqlite3-9.6.0.tgz. Extracting by manifest.
+75 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 92ms
+76 silly audit report {}
+77 http fetch GET 200 https://registry.npmjs.org/@types/better-sqlite3/-/better-sqlite3-9.6.0.tgz 122ms (cache miss)
+78 silly ADD node_modules/@types/better-sqlite3
+79 silly ADD node_modules/fsevents
+80 silly ADD
+81 silly ADD
+82 silly ADD
+83 silly ADD
+84 silly ADD
+85 silly ADD
+86 silly ADD
+87 silly ADD
+88 silly ADD
+89 silly ADD
+90 silly ADD
+91 silly ADD
+92 silly ADD
+93 silly ADD
+94 silly ADD
+95 silly ADD
+96 silly ADD
+97 silly ADD
+98 silly ADD
+99 silly ADD
+100 silly ADD
+101 silly ADD
+102 silly ADD
+103 silly ADD
+104 silly ADD
+105 verbose cwd /Users/nivethaniruthayanathan/Code/Cantask
+106 verbose os Darwin 24.6.0
+107 verbose node v23.7.0
+108 verbose npm  v10.9.2
+109 verbose exit 0
+110 info ok

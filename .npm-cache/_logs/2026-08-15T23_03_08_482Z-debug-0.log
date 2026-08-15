@@ -1,0 +1,877 @@
+0 verbose cli /opt/homebrew/Cellar/node/23.7.0/bin/node /opt/homebrew/bin/npm
+1 info using npm@10.9.2
+2 info using node@v23.7.0
+3 silly config load:file:/opt/homebrew/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/nivethaniruthayanathan/Code/Cantask/.npmrc
+5 silly config load:file:/Users/nivethaniruthayanathan/.npmrc
+6 silly config load:file:/opt/homebrew/etc/npmrc
+7 verbose title npm install concurrently
+8 verbose argv "install" "--save-dev" "concurrently" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:/Users/nivethaniruthayanathan/Code/Cantask/.npm-cache/_logs/2026-08-15T23_03_08_482Z-
+10 verbose logfile /Users/nivethaniruthayanathan/Code/Cantask/.npm-cache/_logs/2026-08-15T23_03_08_482Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+14 silly idealTree buildDeps
+15 silly fetch manifest concurrently@*
+16 silly packumentCache full:https://registry.npmjs.org/concurrently cache-miss
+17 http fetch GET 200 https://registry.npmjs.org/concurrently 104ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/concurrently set size:undefined disposed:false
+19 silly placeDep ROOT concurrently@10.0.5 OK for: cantask@1.0.0 want: *
+20 silly fetch manifest rxjs@7.8.2
+21 silly packumentCache full:https://registry.npmjs.org/rxjs cache-miss
+22 silly fetch manifest chalk@5.6.2
+23 silly packumentCache full:https://registry.npmjs.org/chalk cache-miss
+24 silly fetch manifest yargs@18.0.0
+25 silly packumentCache full:https://registry.npmjs.org/yargs cache-miss
+26 silly fetch manifest tree-kill@1.2.2
+27 silly packumentCache full:https://registry.npmjs.org/tree-kill cache-miss
+28 silly fetch manifest shell-quote@1.9.0
+29 silly packumentCache full:https://registry.npmjs.org/shell-quote cache-miss
+30 silly fetch manifest supports-color@10.2.2
+31 silly packumentCache full:https://registry.npmjs.org/supports-color cache-miss
+32 http fetch GET 200 https://registry.npmjs.org/chalk 36ms (cache miss)
+33 silly packumentCache full:https://registry.npmjs.org/chalk set size:undefined disposed:false
+34 http fetch GET 200 https://registry.npmjs.org/tree-kill 62ms (cache miss)
+35 silly packumentCache full:https://registry.npmjs.org/tree-kill set size:undefined disposed:false
+36 http fetch GET 200 https://registry.npmjs.org/supports-color 63ms (cache miss)
+37 silly packumentCache full:https://registry.npmjs.org/supports-color set size:undefined disposed:false
+38 http fetch GET 200 https://registry.npmjs.org/shell-quote 65ms (cache miss)
+39 silly packumentCache full:https://registry.npmjs.org/shell-quote set size:undefined disposed:false
+40 http fetch GET 200 https://registry.npmjs.org/rxjs 69ms (cache miss)
+41 silly packumentCache full:https://registry.npmjs.org/rxjs set size:undefined disposed:false
+42 http fetch GET 200 https://registry.npmjs.org/yargs 82ms (cache miss)
+43 silly packumentCache full:https://registry.npmjs.org/yargs set size:undefined disposed:false
+44 silly placeDep ROOT chalk@5.6.2 OK for: concurrently@10.0.5 want: 5.6.2
+45 silly placeDep ROOT rxjs@7.8.2 OK for: concurrently@10.0.5 want: 7.8.2
+46 silly placeDep ROOT shell-quote@1.9.0 OK for: concurrently@10.0.5 want: 1.9.0
+47 silly placeDep ROOT supports-color@10.2.2 OK for: concurrently@10.0.5 want: 10.2.2
+48 silly placeDep ROOT tree-kill@1.2.2 OK for: concurrently@10.0.5 want: 1.2.2
+49 silly placeDep ROOT yargs@18.0.0 OK for: concurrently@10.0.5 want: 18.0.0
+50 silly fetch manifest tslib@^2.1.0
+51 silly packumentCache full:https://registry.npmjs.org/tslib cache-miss
+52 silly fetch manifest y18n@^5.0.5
+53 silly packumentCache full:https://registry.npmjs.org/y18n cache-miss
+54 silly fetch manifest cliui@^9.0.1
+55 silly packumentCache full:https://registry.npmjs.org/cliui cache-miss
+56 silly fetch manifest string-width@^7.2.0
+57 silly packumentCache full:https://registry.npmjs.org/string-width cache-miss
+58 silly fetch manifest yargs-parser@^22.0.0
+59 silly packumentCache full:https://registry.npmjs.org/yargs-parser cache-miss
+60 silly fetch manifest get-caller-file@^2.0.5
+61 silly packumentCache full:https://registry.npmjs.org/get-caller-file cache-miss
+62 http fetch GET 200 https://registry.npmjs.org/y18n 29ms (cache miss)
+63 silly packumentCache full:https://registry.npmjs.org/y18n set size:undefined disposed:false
+64 http fetch GET 200 https://registry.npmjs.org/tslib 32ms (cache miss)
+65 silly packumentCache full:https://registry.npmjs.org/tslib set size:undefined disposed:false
+66 http fetch GET 200 https://registry.npmjs.org/string-width 32ms (cache miss)
+67 silly packumentCache full:https://registry.npmjs.org/string-width set size:undefined disposed:false
+68 http fetch GET 200 https://registry.npmjs.org/yargs-parser 33ms (cache miss)
+69 silly packumentCache full:https://registry.npmjs.org/yargs-parser set size:undefined disposed:false
+70 http fetch GET 200 https://registry.npmjs.org/cliui 34ms (cache miss)
+71 silly packumentCache full:https://registry.npmjs.org/cliui set size:undefined disposed:false
+72 http fetch GET 200 https://registry.npmjs.org/get-caller-file 90ms (cache miss)
+73 silly packumentCache full:https://registry.npmjs.org/get-caller-file set size:undefined disposed:false
+74 silly placeDep ROOT tslib@2.8.1 OK for: rxjs@7.8.2 want: ^2.1.0
+75 silly placeDep ROOT cliui@9.0.1 OK for: yargs@18.0.0 want: ^9.0.1
+76 silly placeDep ROOT get-caller-file@2.0.5 OK for: yargs@18.0.0 want: ^2.0.5
+77 silly placeDep ROOT string-width@7.2.0 OK for: yargs@18.0.0 want: ^7.2.0
+78 silly placeDep ROOT y18n@5.0.8 OK for: yargs@18.0.0 want: ^5.0.5
+79 silly placeDep ROOT yargs-parser@22.0.0 OK for: yargs@18.0.0 want: ^22.0.0
+80 silly fetch manifest strip-ansi@^7.1.0
+81 silly packumentCache full:https://registry.npmjs.org/strip-ansi cache-miss
+82 silly fetch manifest wrap-ansi@^9.0.0
+83 silly packumentCache full:https://registry.npmjs.org/wrap-ansi cache-miss
+84 silly fetch manifest strip-ansi@^7.1.0
+85 silly packumentCache full:https://registry.npmjs.org/strip-ansi cache-miss
+86 silly fetch manifest emoji-regex@^10.3.0
+87 silly packumentCache full:https://registry.npmjs.org/emoji-regex cache-miss
+88 silly fetch manifest get-east-asian-width@^1.0.0
+89 silly packumentCache full:https://registry.npmjs.org/get-east-asian-width cache-miss
+90 http fetch GET 200 https://registry.npmjs.org/strip-ansi 23ms (cache miss)
+91 silly packumentCache full:https://registry.npmjs.org/strip-ansi set size:undefined disposed:false
+92 http fetch GET 200 https://registry.npmjs.org/strip-ansi 25ms (cache miss)
+93 silly packumentCache full:https://registry.npmjs.org/strip-ansi set size:undefined disposed:false
+94 http fetch GET 200 https://registry.npmjs.org/get-east-asian-width 27ms (cache miss)
+95 silly packumentCache full:https://registry.npmjs.org/get-east-asian-width set size:undefined disposed:false
+96 http fetch GET 200 https://registry.npmjs.org/emoji-regex 30ms (cache miss)
+97 silly packumentCache full:https://registry.npmjs.org/emoji-regex set size:undefined disposed:false
+98 http fetch GET 200 https://registry.npmjs.org/wrap-ansi 82ms (cache miss)
+99 silly packumentCache full:https://registry.npmjs.org/wrap-ansi set size:undefined disposed:false
+100 silly placeDep ROOT strip-ansi@7.2.0 OK for: cliui@9.0.1 want: ^7.1.0
+101 silly placeDep ROOT wrap-ansi@9.0.2 OK for: cliui@9.0.1 want: ^9.0.0
+102 silly fetch manifest ansi-regex@^6.2.2
+103 silly packumentCache full:https://registry.npmjs.org/ansi-regex cache-miss
+104 silly fetch manifest ansi-styles@^6.2.1
+105 silly packumentCache full:https://registry.npmjs.org/ansi-styles cache-miss
+106 http fetch GET 200 https://registry.npmjs.org/ansi-regex 22ms (cache miss)
+107 silly packumentCache full:https://registry.npmjs.org/ansi-regex set size:undefined disposed:false
+108 http fetch GET 200 https://registry.npmjs.org/ansi-styles 28ms (cache miss)
+109 silly packumentCache full:https://registry.npmjs.org/ansi-styles set size:undefined disposed:false
+110 silly placeDep ROOT emoji-regex@10.6.0 OK for: string-width@7.2.0 want: ^10.3.0
+111 silly placeDep ROOT get-east-asian-width@1.6.0 OK for: string-width@7.2.0 want: ^1.0.0
+112 silly placeDep ROOT ansi-regex@6.3.0 OK for: strip-ansi@7.2.0 want: ^6.2.2
+113 silly placeDep ROOT ansi-styles@6.2.3 OK for: wrap-ansi@9.0.2 want: ^6.2.1
+114 silly reify moves {}
+115 silly audit bulk request {
+115 silly audit   '@cantask/api': [ '1.0.0' ],
+115 silly audit   '@cantask/web': [ '1.0.0' ],
+115 silly audit   '@babel/code-frame': [ '7.29.7' ],
+115 silly audit   '@babel/compat-data': [ '7.29.7' ],
+115 silly audit   '@babel/core': [ '7.29.7' ],
+115 silly audit   '@babel/generator': [ '7.29.8' ],
+115 silly audit   '@babel/helper-compilation-targets': [ '7.29.7' ],
+115 silly audit   '@babel/helper-globals': [ '7.29.7' ],
+115 silly audit   '@babel/helper-module-imports': [ '7.29.7' ],
+115 silly audit   '@babel/helper-module-transforms': [ '7.29.7' ],
+115 silly audit   '@babel/helper-plugin-utils': [ '7.29.7' ],
+115 silly audit   '@babel/helper-string-parser': [ '7.29.7' ],
+115 silly audit   '@babel/helper-validator-identifier': [ '7.29.7' ],
+115 silly audit   '@babel/helper-validator-option': [ '7.29.7' ],
+115 silly audit   '@babel/helpers': [ '7.29.7' ],
+115 silly audit   '@babel/parser': [ '7.29.8' ],
+115 silly audit   '@babel/plugin-transform-react-jsx-self': [ '7.29.7' ],
+115 silly audit   '@babel/plugin-transform-react-jsx-source': [ '7.29.7' ],
+115 silly audit   '@babel/template': [ '7.29.7' ],
+115 silly audit   '@babel/traverse': [ '7.29.8' ],
+115 silly audit   '@babel/types': [ '7.29.8' ],
+115 silly audit   '@esbuild/aix-ppc64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/android-arm': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/android-arm64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/android-x64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/darwin-arm64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/darwin-x64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/freebsd-arm64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/freebsd-x64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/linux-arm': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/linux-arm64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/linux-ia32': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/linux-loong64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/linux-mips64el': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/linux-ppc64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/linux-riscv64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/linux-s390x': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/linux-x64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/netbsd-arm64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/netbsd-x64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/openbsd-arm64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/openbsd-x64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/openharmony-arm64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/sunos-x64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/win32-arm64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/win32-ia32': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@esbuild/win32-x64': [ '0.28.2', '0.25.12' ],
+115 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+115 silly audit   '@jridgewell/remapping': [ '2.3.5' ],
+115 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+115 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+115 silly audit   '@jridgewell/trace-mapping': [ '0.3.31' ],
+115 silly audit   '@napi-rs/lzma-linux-x64-gnu': [ '1.5.1' ],
+115 silly audit   '@remix-run/router': [ '1.23.3' ],
+115 silly audit   '@rolldown/pluginutils': [ '1.0.0-beta.27' ],
+115 silly audit   '@rollup/rollup-android-arm-eabi': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-android-arm64': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-darwin-arm64': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-darwin-x64': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-freebsd-arm64': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-freebsd-x64': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-linux-arm-gnueabihf': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-linux-arm-musleabihf': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-linux-arm64-gnu': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-linux-arm64-musl': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-linux-loong64-gnu': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-linux-loong64-musl': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-linux-ppc64-gnu': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-linux-ppc64-musl': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-linux-riscv64-gnu': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-linux-riscv64-musl': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-linux-s390x-gnu': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-linux-x64-gnu': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-linux-x64-musl': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-openbsd-x64': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-openharmony-arm64': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-win32-arm64-msvc': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-win32-ia32-msvc': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-win32-x64-gnu': [ '4.62.4' ],
+115 silly audit   '@rollup/rollup-win32-x64-msvc': [ '4.62.4' ],
+115 silly audit   '@types/babel__core': [ '7.20.5' ],
+115 silly audit   '@types/babel__generator': [ '7.27.0' ],
+115 silly audit   '@types/babel__template': [ '7.4.4' ],
+115 silly audit   '@types/babel__traverse': [ '7.28.0' ],
+115 silly audit   '@types/better-sqlite3': [ '9.6.0' ],
+115 silly audit   '@types/body-parser': [ '1.19.6' ],
+115 silly audit   '@types/connect': [ '3.4.38' ],
+115 silly audit   '@types/cors': [ '2.8.19' ],
+115 silly audit   '@types/estree': [ '1.0.9' ],
+115 silly audit   '@types/express': [ '4.17.25' ],
+115 silly audit   '@types/express-serve-static-core': [ '4.19.9' ],
+115 silly audit   '@types/http-errors': [ '2.0.5' ],
+115 silly audit   '@types/mime': [ '1.3.5' ],
+115 silly audit   '@types/node': [ '22.20.1' ],
+115 silly audit   '@types/prop-types': [ '15.7.15' ],
+115 silly audit   '@types/qs': [ '6.15.1' ],
+115 silly audit   '@types/range-parser': [ '1.2.7' ],
+115 silly audit   '@types/react': [ '18.3.31' ],
+115 silly audit   '@types/react-dom': [ '18.3.7' ],
+115 silly audit   '@types/send': [ '1.2.1', '0.17.6' ],
+115 silly audit   '@types/serve-static': [ '1.15.10' ],
+115 silly audit   '@vitejs/plugin-react': [ '4.7.0' ],
+115 silly audit   accepts: [ '1.3.8' ],
+115 silly audit   'array-flatten': [ '1.1.1' ],
+115 silly audit   'base64-js': [ '1.5.1' ],
+115 silly audit   'baseline-browser-mapping': [ '2.11.14' ],
+115 silly audit   'better-sqlite3': [ '11.10.0' ],
+115 silly audit   bindings: [ '1.5.0' ],
+115 silly audit   bl: [ '4.1.0' ],
+115 silly audit   'body-parser': [ '1.20.6' ],
+115 silly audit   debug: [ '2.6.9', '4.4.3' ],
+115 silly audit   ms: [ '2.0.0', '2.1.3' ],
+115 silly audit   browserslist: [ '4.28.8' ],
+115 silly audit   buffer: [ '5.7.1' ],
+115 silly audit   bytes: [ '3.1.2' ],
+115 silly audit   'call-bind-apply-helpers': [ '1.0.2' ],
+115 silly audit   'call-bound': [ '1.0.4' ],
+115 silly audit   'caniuse-lite': [ '1.0.30001809' ],
+115 silly audit   chownr: [ '1.1.4' ],
+115 silly audit   'content-disposition': [ '0.5.4' ],
+115 silly audit   'content-type': [ '1.0.5' ],
+115 silly audit   'convert-source-map': [ '2.0.0' ],
+115 silly audit   cookie: [ '0.7.2' ],
+115 silly audit   'cookie-signature': [ '1.0.7' ],
+115 silly audit   cors: [ '2.8.6' ],
+115 silly audit   csstype: [ '3.2.3' ],
+115 silly audit   'decompress-response': [ '6.0.0' ],
+115 silly audit   'deep-extend': [ '0.6.0' ],
+115 silly audit   depd: [ '2.0.0' ],
+115 silly audit   destroy: [ '1.2.0' ],
+115 silly audit   'detect-libc': [ '2.1.2' ],
+115 silly audit   'dunder-proto': [ '1.0.1' ],
+115 silly audit   'ee-first': [ '1.1.1' ],
+115 silly audit   'electron-to-chromium': [ '1.5.407' ],
+115 silly audit   encodeurl: [ '2.0.0' ],
+115 silly audit   'end-of-stream': [ '1.4.5' ],
+115 silly audit   'es-define-property': [ '1.0.1' ],
+115 silly audit   'es-errors': [ '1.3.0' ],
+115 silly audit   'es-object-atoms': [ '1.1.2' ],
+115 silly audit   esbuild: [ '0.28.2', '0.25.12' ],
+115 silly audit   escalade: [ '3.2.0' ],
+115 silly audit   'escape-html': [ '1.0.3' ],
+115 silly audit   etag: [ '1.8.1' ],
+115 silly audit   'expand-template': [ '2.0.3' ],
+115 silly audit   express: [ '4.22.2' ],
+115 silly audit   fdir: [ '6.5.0' ],
+115 silly audit   'file-uri-to-path': [ '1.0.0' ],
+115 silly audit   finalhandler: [ '1.3.2' ],
+115 silly audit   forwarded: [ '0.2.0' ],
+115 silly audit   fresh: [ '0.5.2' ],
+115 silly audit   'fs-constants': [ '1.0.0' ],
+115 silly audit   fsevents: [ '2.3.3' ],
+115 silly audit   'function-bind': [ '1.1.2' ],
+115 silly audit   gensync: [ '1.0.0-beta.2' ],
+115 silly audit   'get-intrinsic': [ '1.3.0' ],
+115 silly audit   'get-proto': [ '1.0.1' ],
+115 silly audit   'github-from-package': [ '0.0.0' ],
+115 silly audit   gopd: [ '1.2.0' ],
+115 silly audit   'has-symbols': [ '1.1.0' ],
+115 silly audit   hasown: [ '2.0.4' ],
+115 silly audit   'http-errors': [ '2.0.1' ],
+115 silly audit   'iconv-lite': [ '0.4.24' ],
+115 silly audit   ieee754: [ '1.2.1' ],
+115 silly audit   inherits: [ '2.0.4' ],
+115 silly audit   ini: [ '1.3.8' ],
+115 silly audit   'ipaddr.js': [ '1.9.1' ],
+115 silly audit   'js-tokens': [ '4.0.0' ],
+115 silly audit   jsesc: [ '3.1.0' ],
+115 silly audit   json5: [ '2.2.3' ],
+115 silly audit   'loose-envify': [ '1.4.0' ],
+115 silly audit   'lru-cache': [ '5.1.1' ],
+115 silly audit   'math-intrinsics': [ '1.1.0' ],
+115 silly audit   'media-typer': [ '0.3.0' ],
+115 silly audit   'merge-descriptors': [ '1.0.3' ],
+115 silly audit   methods: [ '1.1.2' ],
+115 silly audit   mime: [ '1.6.0' ],
+115 silly audit   'mime-db': [ '1.52.0' ],
+115 silly audit   'mime-types': [ '2.1.35' ],
+115 silly audit   'mimic-response': [ '3.1.0' ],
+115 silly audit   minimist: [ '1.2.8' ],
+115 silly audit   'mkdirp-classic': [ '0.5.3' ],
+115 silly audit   nanoid: [ '3.3.18' ],
+115 silly audit   'napi-build-utils': [ '2.0.0' ],
+115 silly audit   negotiator: [ '0.6.3' ],
+115 silly audit   'node-abi': [ '3.94.0' ],
+115 silly audit   semver: [ '7.8.5', '6.3.1' ],
+115 silly audit   'node-releases': [ '2.0.53' ],
+115 silly audit   'object-assign': [ '4.1.1' ],
+115 silly audit   'object-inspect': [ '1.13.4' ],
+115 silly audit   'on-finished': [ '2.4.1' ],
+115 silly audit   once: [ '1.4.0' ],
+115 silly audit   parseurl: [ '1.3.3' ],
+115 silly audit   'path-to-regexp': [ '0.1.13' ],
+115 silly audit   picocolors: [ '1.1.1' ],
+115 silly audit   picomatch: [ '4.0.5' ],
+115 silly audit   postcss: [ '8.5.26' ],
+115 silly audit   'prebuild-install': [ '7.1.3' ],
+115 silly audit   'proxy-addr': [ '2.0.7' ],
+115 silly audit   pump: [ '3.0.4' ],
+115 silly audit   qs: [ '6.15.3' ],
+115 silly audit   'range-parser': [ '1.2.1' ],
+115 silly audit   'raw-body': [ '2.5.3' ],
+115 silly audit   rc: [ '1.2.8' ],
+115 silly audit   react: [ '18.3.1' ],
+115 silly audit   'react-dom': [ '18.3.1' ],
+115 silly audit   'react-refresh': [ '0.17.0' ],
+115 silly audit   'react-router': [ '6.30.4' ],
+115 silly audit   'react-router-dom': [ '6.30.4' ],
+115 silly audit   'readable-stream': [ '3.6.2' ],
+115 silly audit   rollup: [ '4.62.4' ],
+115 silly audit   'safe-buffer': [ '5.2.1' ],
+115 silly audit   'safer-buffer': [ '2.1.2' ],
+115 silly audit   scheduler: [ '0.23.2' ],
+115 silly audit   send: [ '0.19.2' ],
+115 silly audit   'serve-static': [ '1.16.3' ],
+115 silly audit   setprototypeof: [ '1.2.0' ],
+115 silly audit   'side-channel': [ '1.1.1' ],
+115 silly audit   'side-channel-list': [ '1.0.1' ],
+115 silly audit   'side-channel-map': [ '1.0.1' ],
+115 silly audit   'side-channel-weakmap': [ '1.0.2' ],
+115 silly audit   'simple-concat': [ '1.0.1' ],
+115 silly audit   'simple-get': [ '4.0.1' ],
+115 silly audit   'source-map-js': [ '1.2.1' ],
+115 silly audit   statuses: [ '2.0.2' ],
+115 silly audit   string_decoder: [ '1.3.0' ],
+115 silly audit   'strip-json-comments': [ '2.0.1' ],
+115 silly audit   'tar-fs': [ '2.1.5' ],
+115 silly audit   'tar-stream': [ '2.2.0' ],
+115 silly audit   tinyglobby: [ '0.2.17' ],
+115 silly audit   toidentifier: [ '1.0.1' ],
+115 silly audit   tsx: [ '4.23.12' ],
+115 silly audit   'tunnel-agent': [ '0.6.0' ],
+115 silly audit   'type-is': [ '1.6.18' ],
+115 silly audit   typescript: [ '5.9.3' ],
+115 silly audit   'undici-types': [ '6.21.0' ],
+115 silly audit   unpipe: [ '1.0.0' ],
+115 silly audit   'update-browserslist-db': [ '1.3.1' ],
+115 silly audit   'util-deprecate': [ '1.0.2' ],
+115 silly audit   'utils-merge': [ '1.0.1' ],
+115 silly audit   vary: [ '1.1.2' ],
+115 silly audit   vite: [ '6.4.3' ],
+115 silly audit   wrappy: [ '1.0.2' ],
+115 silly audit   yallist: [ '3.1.1' ],
+115 silly audit   zod: [ '3.25.76' ],
+115 silly audit   concurrently: [ '10.0.5' ],
+115 silly audit   chalk: [ '5.6.2' ],
+115 silly audit   rxjs: [ '7.8.2' ],
+115 silly audit   'shell-quote': [ '1.9.0' ],
+115 silly audit   'supports-color': [ '10.2.2' ],
+115 silly audit   'tree-kill': [ '1.2.2' ],
+115 silly audit   yargs: [ '18.0.0' ],
+115 silly audit   tslib: [ '2.8.1' ],
+115 silly audit   cliui: [ '9.0.1' ],
+115 silly audit   'get-caller-file': [ '2.0.5' ],
+115 silly audit   'string-width': [ '7.2.0' ],
+115 silly audit   y18n: [ '5.0.8' ],
+115 silly audit   'yargs-parser': [ '22.0.0' ],
+115 silly audit   'strip-ansi': [ '7.2.0' ],
+115 silly audit   'wrap-ansi': [ '9.0.2' ],
+115 silly audit   'emoji-regex': [ '10.6.0' ],
+115 silly audit   'get-east-asian-width': [ '1.6.0' ],
+115 silly audit   'ansi-regex': [ '6.3.0' ],
+115 silly audit   'ansi-styles': [ '6.2.3' ]
+115 silly audit }
+116 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-x64-msvc
+117 silly reify mark deleted [
+117 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-x64-msvc'
+117 silly reify ]
+118 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-x64-gnu
+119 silly reify mark deleted [
+119 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-x64-gnu'
+119 silly reify ]
+120 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-ia32-msvc
+121 silly reify mark deleted [
+121 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-ia32-msvc'
+121 silly reify ]
+122 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-arm64-msvc
+123 silly reify mark deleted [
+123 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-win32-arm64-msvc'
+123 silly reify ]
+124 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-openharmony-arm64
+125 silly reify mark deleted [
+125 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-openharmony-arm64'
+125 silly reify ]
+126 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-openbsd-x64
+127 silly reify mark deleted [
+127 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-openbsd-x64'
+127 silly reify ]
+128 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-x64-musl
+129 silly reify mark deleted [
+129 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-x64-musl'
+129 silly reify ]
+130 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-x64-gnu
+131 silly reify mark deleted [
+131 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-x64-gnu'
+131 silly reify ]
+132 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-s390x-gnu
+133 silly reify mark deleted [
+133 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-s390x-gnu'
+133 silly reify ]
+134 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-riscv64-musl
+135 silly reify mark deleted [
+135 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-riscv64-musl'
+135 silly reify ]
+136 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-riscv64-gnu
+137 silly reify mark deleted [
+137 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-riscv64-gnu'
+137 silly reify ]
+138 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-ppc64-musl
+139 silly reify mark deleted [
+139 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-ppc64-musl'
+139 silly reify ]
+140 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-ppc64-gnu
+141 silly reify mark deleted [
+141 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-ppc64-gnu'
+141 silly reify ]
+142 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-loong64-musl
+143 silly reify mark deleted [
+143 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-loong64-musl'
+143 silly reify ]
+144 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-loong64-gnu
+145 silly reify mark deleted [
+145 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-loong64-gnu'
+145 silly reify ]
+146 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm64-musl
+147 silly reify mark deleted [
+147 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm64-musl'
+147 silly reify ]
+148 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm64-gnu
+149 silly reify mark deleted [
+149 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm64-gnu'
+149 silly reify ]
+150 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm-musleabihf
+151 silly reify mark deleted [
+151 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm-musleabihf'
+151 silly reify ]
+152 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm-gnueabihf
+153 silly reify mark deleted [
+153 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-linux-arm-gnueabihf'
+153 silly reify ]
+154 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-freebsd-x64
+155 silly reify mark deleted [
+155 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-freebsd-x64'
+155 silly reify ]
+156 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-freebsd-arm64
+157 silly reify mark deleted [
+157 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-freebsd-arm64'
+157 silly reify ]
+158 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-darwin-x64
+159 silly reify mark deleted [
+159 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-darwin-x64'
+159 silly reify ]
+160 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-android-arm64
+161 silly reify mark deleted [
+161 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-android-arm64'
+161 silly reify ]
+162 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-android-arm-eabi
+163 silly reify mark deleted [
+163 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@rollup/rollup-android-arm-eabi'
+163 silly reify ]
+164 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@napi-rs/lzma-linux-x64-gnu
+165 silly reify mark deleted [
+165 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@napi-rs/lzma-linux-x64-gnu'
+165 silly reify ]
+166 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-x64
+167 silly reify mark deleted [
+167 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-x64'
+167 silly reify ]
+168 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-ia32
+169 silly reify mark deleted [
+169 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-ia32'
+169 silly reify ]
+170 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-arm64
+171 silly reify mark deleted [
+171 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/win32-arm64'
+171 silly reify ]
+172 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/sunos-x64
+173 silly reify mark deleted [
+173 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/sunos-x64'
+173 silly reify ]
+174 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openharmony-arm64
+175 silly reify mark deleted [
+175 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openharmony-arm64'
+175 silly reify ]
+176 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openbsd-x64
+177 silly reify mark deleted [
+177 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openbsd-x64'
+177 silly reify ]
+178 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openbsd-arm64
+179 silly reify mark deleted [
+179 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/openbsd-arm64'
+179 silly reify ]
+180 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/netbsd-x64
+181 silly reify mark deleted [
+181 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/netbsd-x64'
+181 silly reify ]
+182 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/netbsd-arm64
+183 silly reify mark deleted [
+183 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/netbsd-arm64'
+183 silly reify ]
+184 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-x64
+185 silly reify mark deleted [
+185 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-x64'
+185 silly reify ]
+186 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-s390x
+187 silly reify mark deleted [
+187 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-s390x'
+187 silly reify ]
+188 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-riscv64
+189 silly reify mark deleted [
+189 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-riscv64'
+189 silly reify ]
+190 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-ppc64
+191 silly reify mark deleted [
+191 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-ppc64'
+191 silly reify ]
+192 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-mips64el
+193 silly reify mark deleted [
+193 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-mips64el'
+193 silly reify ]
+194 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-loong64
+195 silly reify mark deleted [
+195 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-loong64'
+195 silly reify ]
+196 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-ia32
+197 silly reify mark deleted [
+197 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-ia32'
+197 silly reify ]
+198 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-arm64
+199 silly reify mark deleted [
+199 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-arm64'
+199 silly reify ]
+200 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-arm
+201 silly reify mark deleted [
+201 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/linux-arm'
+201 silly reify ]
+202 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/freebsd-x64
+203 silly reify mark deleted [
+203 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/freebsd-x64'
+203 silly reify ]
+204 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/freebsd-arm64
+205 silly reify mark deleted [
+205 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/freebsd-arm64'
+205 silly reify ]
+206 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/darwin-x64
+207 silly reify mark deleted [
+207 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/darwin-x64'
+207 silly reify ]
+208 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-x64
+209 silly reify mark deleted [
+209 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-x64'
+209 silly reify ]
+210 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-arm64
+211 silly reify mark deleted [
+211 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-arm64'
+211 silly reify ]
+212 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-arm
+213 silly reify mark deleted [
+213 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/android-arm'
+213 silly reify ]
+214 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/aix-ppc64
+215 silly reify mark deleted [
+215 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/@esbuild/aix-ppc64'
+215 silly reify ]
+216 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/win32-x64
+217 silly reify mark deleted [
+217 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/win32-x64'
+217 silly reify ]
+218 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/win32-ia32
+219 silly reify mark deleted [
+219 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/win32-ia32'
+219 silly reify ]
+220 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/win32-arm64
+221 silly reify mark deleted [
+221 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/win32-arm64'
+221 silly reify ]
+222 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/sunos-x64
+223 silly reify mark deleted [
+223 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/sunos-x64'
+223 silly reify ]
+224 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/openharmony-arm64
+225 silly reify mark deleted [
+225 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/openharmony-arm64'
+225 silly reify ]
+226 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/openbsd-x64
+227 silly reify mark deleted [
+227 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/openbsd-x64'
+227 silly reify ]
+228 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/openbsd-arm64
+229 silly reify mark deleted [
+229 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/openbsd-arm64'
+229 silly reify ]
+230 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/netbsd-x64
+231 silly reify mark deleted [
+231 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/netbsd-x64'
+231 silly reify ]
+232 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/netbsd-arm64
+233 silly reify mark deleted [
+233 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/netbsd-arm64'
+233 silly reify ]
+234 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-x64
+235 silly reify mark deleted [
+235 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-x64'
+235 silly reify ]
+236 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-s390x
+237 silly reify mark deleted [
+237 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-s390x'
+237 silly reify ]
+238 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-riscv64
+239 silly reify mark deleted [
+239 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-riscv64'
+239 silly reify ]
+240 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-ppc64
+241 silly reify mark deleted [
+241 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-ppc64'
+241 silly reify ]
+242 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-mips64el
+243 silly reify mark deleted [
+243 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-mips64el'
+243 silly reify ]
+244 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-loong64
+245 silly reify mark deleted [
+245 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-loong64'
+245 silly reify ]
+246 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-ia32
+247 silly reify mark deleted [
+247 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-ia32'
+247 silly reify ]
+248 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-arm64
+249 silly reify mark deleted [
+249 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-arm64'
+249 silly reify ]
+250 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-arm
+251 silly reify mark deleted [
+251 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/linux-arm'
+251 silly reify ]
+252 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/freebsd-x64
+253 silly reify mark deleted [
+253 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/freebsd-x64'
+253 silly reify ]
+254 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/freebsd-arm64
+255 silly reify mark deleted [
+255 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/freebsd-arm64'
+255 silly reify ]
+256 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/darwin-x64
+257 silly reify mark deleted [
+257 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/darwin-x64'
+257 silly reify ]
+258 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/android-x64
+259 silly reify mark deleted [
+259 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/android-x64'
+259 silly reify ]
+260 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/android-arm64
+261 silly reify mark deleted [
+261 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/android-arm64'
+261 silly reify ]
+262 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/android-arm
+263 silly reify mark deleted [
+263 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/android-arm'
+263 silly reify ]
+264 verbose reify failed optional dependency /Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/aix-ppc64
+265 silly reify mark deleted [
+265 silly reify   '/Users/nivethaniruthayanathan/Code/Cantask/node_modules/vite/node_modules/@esbuild/aix-ppc64'
+265 silly reify ]
+266 http cache ansi-styles@https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.3.tgz 0ms (cache hit)
+267 http cache ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.3.0.tgz 0ms (cache hit)
+268 http cache emoji-regex@https://registry.npmjs.org/emoji-regex/-/emoji-regex-10.6.0.tgz 0ms (cache hit)
+269 http cache get-east-asian-width@https://registry.npmjs.org/get-east-asian-width/-/get-east-asian-width-1.6.0.tgz 0ms (cache hit)
+270 http cache wrap-ansi@https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-9.0.2.tgz 0ms (cache hit)
+271 http cache strip-ansi@https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz 0ms (cache hit)
+272 http cache yargs-parser@https://registry.npmjs.org/yargs-parser/-/yargs-parser-22.0.0.tgz 0ms (cache hit)
+273 http cache y18n@https://registry.npmjs.org/y18n/-/y18n-5.0.8.tgz 0ms (cache hit)
+274 http cache get-caller-file@https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz 0ms (cache hit)
+275 http cache cliui@https://registry.npmjs.org/cliui/-/cliui-9.0.1.tgz 0ms (cache hit)
+276 http cache tslib@https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz 0ms (cache hit)
+277 http cache yargs@https://registry.npmjs.org/yargs/-/yargs-18.0.0.tgz 0ms (cache hit)
+278 http cache supports-color@https://registry.npmjs.org/supports-color/-/supports-color-10.2.2.tgz 0ms (cache hit)
+279 http cache tree-kill@https://registry.npmjs.org/tree-kill/-/tree-kill-1.2.2.tgz 0ms (cache hit)
+280 http cache string-width@https://registry.npmjs.org/string-width/-/string-width-7.2.0.tgz 0ms (cache hit)
+281 http cache shell-quote@https://registry.npmjs.org/shell-quote/-/shell-quote-1.9.0.tgz 0ms (cache hit)
+282 http cache rxjs@https://registry.npmjs.org/rxjs/-/rxjs-7.8.2.tgz 0ms (cache hit)
+283 http cache chalk@https://registry.npmjs.org/chalk/-/chalk-5.6.2.tgz 0ms (cache hit)
+284 http cache concurrently@https://registry.npmjs.org/concurrently/-/concurrently-10.0.5.tgz 0ms (cache hit)
+285 silly tarball no local data for ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.3.0.tgz. Extracting by manifest.
+286 silly tarball no local data for emoji-regex@https://registry.npmjs.org/emoji-regex/-/emoji-regex-10.6.0.tgz. Extracting by manifest.
+287 silly tarball no local data for ansi-styles@https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.3.tgz. Extracting by manifest.
+288 silly tarball no local data for get-east-asian-width@https://registry.npmjs.org/get-east-asian-width/-/get-east-asian-width-1.6.0.tgz. Extracting by manifest.
+289 silly tarball no local data for wrap-ansi@https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-9.0.2.tgz. Extracting by manifest.
+290 silly tarball no local data for strip-ansi@https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz. Extracting by manifest.
+291 silly tarball no local data for yargs-parser@https://registry.npmjs.org/yargs-parser/-/yargs-parser-22.0.0.tgz. Extracting by manifest.
+292 silly tarball no local data for y18n@https://registry.npmjs.org/y18n/-/y18n-5.0.8.tgz. Extracting by manifest.
+293 silly tarball no local data for get-caller-file@https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz. Extracting by manifest.
+294 silly tarball no local data for cliui@https://registry.npmjs.org/cliui/-/cliui-9.0.1.tgz. Extracting by manifest.
+295 silly tarball no local data for yargs@https://registry.npmjs.org/yargs/-/yargs-18.0.0.tgz. Extracting by manifest.
+296 silly tarball no local data for tslib@https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz. Extracting by manifest.
+297 silly tarball no local data for tree-kill@https://registry.npmjs.org/tree-kill/-/tree-kill-1.2.2.tgz. Extracting by manifest.
+298 silly tarball no local data for supports-color@https://registry.npmjs.org/supports-color/-/supports-color-10.2.2.tgz. Extracting by manifest.
+299 silly tarball no local data for string-width@https://registry.npmjs.org/string-width/-/string-width-7.2.0.tgz. Extracting by manifest.
+300 silly tarball no local data for shell-quote@https://registry.npmjs.org/shell-quote/-/shell-quote-1.9.0.tgz. Extracting by manifest.
+301 silly tarball no local data for chalk@https://registry.npmjs.org/chalk/-/chalk-5.6.2.tgz. Extracting by manifest.
+302 silly tarball no local data for concurrently@https://registry.npmjs.org/concurrently/-/concurrently-10.0.5.tgz. Extracting by manifest.
+303 silly tarball no local data for rxjs@https://registry.npmjs.org/rxjs/-/rxjs-7.8.2.tgz. Extracting by manifest.
+304 http fetch GET 200 https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.3.tgz 40ms (cache miss)
+305 http fetch GET 200 https://registry.npmjs.org/get-east-asian-width/-/get-east-asian-width-1.6.0.tgz 42ms (cache miss)
+306 http fetch GET 200 https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-9.0.2.tgz 44ms (cache miss)
+307 http fetch GET 200 https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.3.0.tgz 45ms (cache miss)
+308 http fetch GET 200 https://registry.npmjs.org/emoji-regex/-/emoji-regex-10.6.0.tgz 45ms (cache miss)
+309 http fetch GET 200 https://registry.npmjs.org/string-width/-/string-width-7.2.0.tgz 44ms (cache miss)
+310 http fetch GET 200 https://registry.npmjs.org/chalk/-/chalk-5.6.2.tgz 45ms (cache miss)
+311 http fetch GET 200 https://registry.npmjs.org/shell-quote/-/shell-quote-1.9.0.tgz 54ms (cache miss)
+312 http fetch GET 200 https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz 63ms (cache miss)
+313 http fetch GET 200 https://registry.npmjs.org/cliui/-/cliui-9.0.1.tgz 64ms (cache miss)
+314 http fetch GET 200 https://registry.npmjs.org/yargs/-/yargs-18.0.0.tgz 78ms (cache miss)
+315 http fetch GET 200 https://registry.npmjs.org/y18n/-/y18n-5.0.8.tgz 80ms (cache miss)
+316 http fetch GET 200 https://registry.npmjs.org/supports-color/-/supports-color-10.2.2.tgz 86ms (cache miss)
+317 http fetch GET 200 https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz 88ms (cache miss)
+318 http fetch GET 200 https://registry.npmjs.org/tree-kill/-/tree-kill-1.2.2.tgz 90ms (cache miss)
+319 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 104ms
+320 silly audit report {
+320 silly audit report   'react-router': [
+320 silly audit report     {
+320 silly audit report       id: 1124268,
+320 silly audit report       url: 'https://github.com/advisories/GHSA-wrjc-x8rr-h8h6',
+320 silly audit report       title: 'React Router: Open redirect via backslash in <Link> and useNavigate (CVE-2025-68470 bypass)',
+320 silly audit report       severity: 'moderate',
+320 silly audit report       vulnerable_versions: '>=6.0.0 <7.18.0',
+320 silly audit report       cwe: [Array],
+320 silly audit report       cvss: [Object]
+320 silly audit report     },
+320 silly audit report     {
+320 silly audit report       id: 1124272,
+320 silly audit report       url: 'https://github.com/advisories/GHSA-337j-9hxr-rhxg',
+320 silly audit report       title: 'React Router: Arbitrary Constructor Injection via deserializeErrors() in React Router SSR Hydration',
+320 silly audit report       severity: 'moderate',
+320 silly audit report       vulnerable_versions: '>=6.4.0 <7.18.0',
+320 silly audit report       cwe: [Array],
+320 silly audit report       cvss: [Object]
+320 silly audit report     }
+320 silly audit report   ],
+320 silly audit report   'react-router-dom': [
+320 silly audit report     {
+320 silly audit report       id: 1124270,
+320 silly audit report       url: 'https://github.com/advisories/GHSA-jjmj-jmhj-qwj2',
+320 silly audit report       title: 'React Router: Open redirect leading to XSS',
+320 silly audit report       severity: 'moderate',
+320 silly audit report       vulnerable_versions: '>=6.30.2 <=6.30.4',
+320 silly audit report       cwe: [Array],
+320 silly audit report       cvss: [Object]
+320 silly audit report     }
+320 silly audit report   ]
+320 silly audit report }
+321 silly packumentCache corgi:https://registry.npmjs.org/react-router cache-miss
+322 silly packumentCache corgi:https://registry.npmjs.org/react-router-dom cache-miss
+323 http fetch GET 200 https://registry.npmjs.org/yargs-parser/-/yargs-parser-22.0.0.tgz 95ms (cache miss)
+324 http fetch GET 200 https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz 99ms (cache miss)
+325 http cache https://registry.npmjs.org/react-router-dom 10ms (cache hit)
+326 silly packumentCache corgi:https://registry.npmjs.org/react-router-dom set size:1062690 disposed:false
+327 http cache https://registry.npmjs.org/react-router 19ms (cache hit)
+328 silly packumentCache corgi:https://registry.npmjs.org/react-router set size:1352188 disposed:false
+329 http fetch GET 200 https://registry.npmjs.org/concurrently/-/concurrently-10.0.5.tgz 143ms (cache miss)
+330 http fetch GET 200 https://registry.npmjs.org/rxjs/-/rxjs-7.8.2.tgz 298ms (cache miss)
+331 silly ADD node_modules/ansi-styles
+332 silly ADD node_modules/ansi-regex
+333 silly ADD node_modules/get-east-asian-width
+334 silly ADD node_modules/emoji-regex
+335 silly ADD node_modules/wrap-ansi
+336 silly ADD node_modules/strip-ansi
+337 silly ADD node_modules/yargs-parser
+338 silly ADD node_modules/y18n
+339 silly ADD node_modules/string-width
+340 silly ADD node_modules/get-caller-file
+341 silly ADD node_modules/cliui
+342 silly ADD node_modules/tslib
+343 silly ADD node_modules/yargs
+344 silly ADD node_modules/tree-kill
+345 silly ADD node_modules/supports-color
+346 silly ADD node_modules/shell-quote
+347 silly ADD node_modules/rxjs
+348 silly ADD node_modules/chalk
+349 silly ADD node_modules/concurrently
+350 silly ADD
+351 silly ADD
+352 silly ADD
+353 silly ADD
+354 silly ADD
+355 silly ADD
+356 silly ADD
+357 silly ADD
+358 silly ADD
+359 silly ADD
+360 silly ADD
+361 silly ADD
+362 silly ADD
+363 silly ADD
+364 silly ADD
+365 silly ADD
+366 silly ADD
+367 silly ADD
+368 silly ADD
+369 silly ADD
+370 silly ADD
+371 silly ADD
+372 silly ADD
+373 silly ADD
+374 silly ADD
+375 silly ADD
+376 silly ADD
+377 silly ADD
+378 silly ADD
+379 silly ADD
+380 silly ADD
+381 silly ADD
+382 silly ADD
+383 silly ADD
+384 silly ADD
+385 silly ADD
+386 silly ADD
+387 silly ADD
+388 silly ADD
+389 silly ADD
+390 silly ADD
+391 silly ADD
+392 silly ADD
+393 silly ADD
+394 silly ADD
+395 silly ADD
+396 silly ADD
+397 silly ADD
+398 silly ADD
+399 silly ADD
+400 silly ADD
+401 silly ADD
+402 silly ADD
+403 silly ADD
+404 silly ADD
+405 silly ADD
+406 silly ADD
+407 silly ADD
+408 silly ADD
+409 silly ADD
+410 silly ADD
+411 silly ADD
+412 silly ADD
+413 silly ADD
+414 silly ADD
+415 silly ADD
+416 silly ADD
+417 silly ADD
+418 silly ADD
+419 silly ADD
+420 silly ADD
+421 silly ADD
+422 silly ADD
+423 silly ADD
+424 silly ADD
+425 verbose cwd /Users/nivethaniruthayanathan/Code/Cantask
+426 verbose os Darwin 24.6.0
+427 verbose node v23.7.0
+428 verbose npm  v10.9.2
+429 verbose exit 0
+430 info ok
