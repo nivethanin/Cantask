@@ -7,7 +7,9 @@
     "dev": "npm run dev:clean && concurrently \"npm run dev:api\" \"npm run dev:web\"",
     "dev:clean": "sh -c 'PIDS=$(lsof -tiTCP:4000 -sTCP:LISTEN 2>/dev/null; lsof -tiTCP:4001 -sTCP:LISTEN 2>/dev/null); if [ -n \"$PIDS\" ]; then echo \"Stopping stale API processes: $PIDS\"; echo \"$PIDS\" | xargs -r kill -9; fi'",
     "dev:api": "PORT=4001 npm run dev --workspace @cantask/api",
-    "dev:web": "npm run dev --workspace @cantask/web -- --host"
+    "dev:web": "npm run dev --workspace @cantask/web -- --host",
+    "build": "npm run build --workspace @cantask/web && npm run build --workspace @cantask/api",
+    "start": "node apps/api/dist/server.js"
   },
   "keywords": [],
   "author": "",

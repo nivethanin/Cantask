@@ -2,7 +2,9 @@ import fs from "node:fs";
 import path from "node:path";
 import Database from "better-sqlite3";
 
-const dataDir = path.join(process.cwd(), "apps/api/data");
+const dataDir = process.env.DATA_DIR
+  ? path.resolve(process.env.DATA_DIR)
+  : path.join(process.cwd(), "apps/api/data");
 fs.mkdirSync(dataDir, { recursive: true });
 
 const dbPath = path.join(dataDir, "cantask.db");
@@ -16,6 +18,7 @@ db.exec(`
     id TEXT PRIMARY KEY,
     code TEXT NOT NULL UNIQUE,
     name TEXT NOT NULL,
+    description TEXT NOT NULL DEFAULT '',
     created_at TEXT NOT NULL
   );
 
@@ -53,6 +56,14 @@ db.exec(`
   CREATE INDEX IF NOT EXISTS idx_tasks_board_state_pos ON tasks(board_id, state, position);
   CREATE INDEX IF NOT EXISTS idx_participants_board ON participants(board_id);
 `);
+
+const boardColumns = db
+  .prepare("PRAGMA table_info(boards)")
+  .all() as Array<{ name: string }>;
+
+if (!boardColumns.some((column) => column.name === "description")) {
+  db.exec("ALTER TABLE boards ADD COLUMN description TEXT NOT NULL DEFAULT ''");
+}
 
 const taskColumns = db
   .prepare("PRAGMA table_info(tasks)")

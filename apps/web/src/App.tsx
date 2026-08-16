@@ -14,7 +14,7 @@ import {
   type DragStartEvent
 } from "@dnd-kit/core";
 import { SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from "@dnd-kit/sortable";
-import { FormEvent, KeyboardEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from "react";
 import { Navigate, Route, Routes, useNavigate, useParams } from "react-router-dom";
 
 type TaskState = "planned" | "working_on" | "done";
@@ -35,11 +35,12 @@ type Task = {
 type BoardPayload = {
   code: string;
   name: string;
+  description: string;
   participants: Participant[];
   tasks: Task[];
 };
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:4001/api";
+const API_BASE = import.meta.env.VITE_API_URL || "/api";
 
 const stateLabels: Record<TaskState, string> = {
   planned: "Planned",
@@ -242,6 +243,13 @@ function BoardPage() {
 
   const [board, setBoard] = useState<BoardPayload | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [boardDescription, setBoardDescription] = useState("");
+  const [boardDescriptionDraft, setBoardDescriptionDraft] = useState("");
+  const [isBoardDescriptionOpen, setIsBoardDescriptionOpen] = useState(false);
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+  const [isDescriptionTruncated, setIsDescriptionTruncated] = useState(false);
+  const descriptionTextRef = useRef<HTMLParagraphElement>(null);
+  const descriptionTextareaRef = useRef<HTMLTextAreaElement>(null);
 
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
@@ -284,6 +292,8 @@ function BoardPage() {
     try {
       const payload = await api<BoardPayload>(`/boards/${normalizedCode}`);
       setBoard(payload);
+      setBoardDescription(payload.description ?? "");
+      setBoardDescriptionDraft(payload.description ?? "");
       setError(null);
     } catch (requestError) {
       setError(requestError instanceof Error ? requestError.message : "Could not load board");
@@ -300,6 +310,34 @@ function BoardPage() {
 
     return () => window.clearInterval(timer);
   }, [normalizedCode, selectedTaskId]);
+
+  useEffect(() => {
+    if (isBoardDescriptionOpen || isDescriptionExpanded) {
+      return;
+    }
+
+    const element = descriptionTextRef.current;
+    if (!element) {
+      setIsDescriptionTruncated(false);
+      return;
+    }
+
+    setIsDescriptionTruncated(element.scrollHeight > element.clientHeight + 1);
+  }, [boardDescription, isBoardDescriptionOpen, isDescriptionExpanded]);
+
+  useEffect(() => {
+    if (!isBoardDescriptionOpen) {
+      return;
+    }
+
+    const textarea = descriptionTextareaRef.current;
+    if (!textarea) {
+      return;
+    }
+
+    textarea.style.height = "auto";
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  }, [isBoardDescriptionOpen, boardDescriptionDraft]);
 
   const groupedTasks = useMemo(() => {
     const groups: Record<TaskState, Task[]> = {
@@ -348,6 +386,24 @@ function BoardPage() {
   }
 
   const boardCode = board.code;
+
+  async function saveBoardDescription() {
+    if (!board) {
+      return;
+    }
+
+    try {
+      await api(`/boards/${board.code}`, {
+        method: "PATCH",
+        body: JSON.stringify({ description: boardDescriptionDraft })
+      });
+      setBoardDescription(boardDescriptionDraft);
+      setIsBoardDescriptionOpen(false);
+      await loadBoard();
+    } catch (requestError) {
+      setError(requestError instanceof Error ? requestError.message : "Could not save board description");
+    }
+  }
 
   async function createParticipant(event: FormEvent) {
     event.preventDefault();
@@ -544,23 +600,83 @@ function BoardPage() {
       {error ? <p className="error-text">{error}</p> : null}
 
       <section className="toolbox-grid">
-        <form className="tool-card" onSubmit={createParticipant}>
-          <h2>Add Participant</h2>
-          <div className="inline-form">
-            <input
-              value={participantName}
-              onChange={(event) => setParticipantName(event.target.value)}
-              placeholder="Alex"
-              maxLength={40}
-            />
-            <button type="submit">Add</button>
+        <form className="tool-card split-tool-card" onSubmit={createParticipant}>
+          <div className="description-panel">
+            <div className="panel-header-row">
+              <h2 className="board-description-title">Board Description</h2>
+              {!isBoardDescriptionOpen ? (
+                <button
+                  type="button"
+                  className="text-link-button"
+                  onClick={() => {
+                    setBoardDescriptionDraft(boardDescription);
+                    setIsBoardDescriptionOpen(true);
+                  }}
+                >
+                  Edit
+                </button>
+              ) : null}
+            </div>
+
+            {isBoardDescriptionOpen ? (
+              <>
+                <textarea
+                  ref={descriptionTextareaRef}
+                  className="description-edit-textarea"
+                  value={boardDescriptionDraft}
+                  onChange={(event) => setBoardDescriptionDraft(event.target.value)}
+                  rows={3}
+                  maxLength={2000}
+                  placeholder="Add context for the team..."
+                />
+                <div className="inline-form compact-actions">
+                  <button type="button" className="secondary-button" onClick={() => setIsBoardDescriptionOpen(false)}>
+                    Cancel
+                  </button>
+                  <button type="button" onClick={() => void saveBoardDescription()}>
+                    Save
+                  </button>
+                </div>
+              </>
+            ) : (
+              <div className="description-readonly">
+                <p
+                  ref={descriptionTextRef}
+                  className={isDescriptionExpanded ? "description-text expanded" : "description-text"}
+                >
+                  {boardDescription || "No board description yet."}
+                </p>
+                {isDescriptionTruncated || isDescriptionExpanded ? (
+                  <button
+                    type="button"
+                    className="read-more-toggle"
+                    onClick={() => setIsDescriptionExpanded((current) => !current)}
+                  >
+                    {isDescriptionExpanded ? "Show less" : "Read more"}
+                  </button>
+                ) : null}
+              </div>
+            )}
           </div>
-          <div className="chip-row">
-            {board.participants.map((participant) => (
-              <span className="chip" key={participant.id}>
-                {participant.name}
-              </span>
-            ))}
+
+          <div className="participants-panel">
+            <h2>Add Participants</h2>
+            <div className="inline-form participant-input-row">
+              <input
+                value={participantName}
+                onChange={(event) => setParticipantName(event.target.value)}
+                placeholder="Alex"
+                maxLength={40}
+              />
+              <button type="submit">Add</button>
+            </div>
+            <div className="chip-row participants-chip-row">
+              {board.participants.map((participant) => (
+                <span className="chip" key={participant.id}>
+                  {participant.name}
+                </span>
+              ))}
+            </div>
           </div>
         </form>
 

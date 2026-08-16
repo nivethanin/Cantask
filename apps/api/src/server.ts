@@ -1,4 +1,7 @@
 import crypto from "node:crypto";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import fs from "node:fs";
 import cors from "cors";
 import express from "express";
 import { z } from "zod";
@@ -6,6 +9,7 @@ import { db } from "./db.js";
 
 type TaskState = "planned" | "working_on" | "done";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = Number(process.env.PORT || 4001);
 
@@ -15,7 +19,8 @@ app.use(express.json());
 const boardCodeChars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 const createBoardSchema = z.object({
-  name: z.string().trim().min(1).max(80).optional().default("Untitled Board")
+  name: z.string().trim().min(1).max(80).optional().default("Untitled Board"),
+  description: z.string().max(2000).optional().default("")
 });
 
 const taskStateSchema = z.enum(["planned", "working_on", "done"]);
@@ -54,10 +59,10 @@ function createBoardCode(): string {
   return code;
 }
 
-function getBoardByCode(code: string): { id: string; code: string; name: string } | undefined {
+function getBoardByCode(code: string): { id: string; code: string; name: string; description: string } | undefined {
   return db
-    .prepare("SELECT id, code, name FROM boards WHERE code = ?")
-    .get(code.toUpperCase()) as { id: string; code: string; name: string } | undefined;
+    .prepare("SELECT id, code, name, description FROM boards WHERE code = ?")
+    .get(code.toUpperCase()) as { id: string; code: string; name: string; description: string } | undefined;
 }
 
 function getTaskAssigneeMap(taskIds: string[]) {
@@ -125,6 +130,7 @@ function getBoardPayload(boardCode: string) {
   return {
     code: board.code,
     name: board.name,
+    description: board.description,
     participants,
     tasks: tasks.map((task) => ({
       id: task.id,
@@ -155,17 +161,19 @@ app.post("/api/boards", (req, res) => {
     const code = createBoardCode();
 
     try {
-      db.prepare("INSERT INTO boards (id, code, name, created_at) VALUES (?, ?, ?, ?)").run(
+      db.prepare("INSERT INTO boards (id, code, name, description, created_at) VALUES (?, ?, ?, ?, ?)").run(
         boardId,
         code,
         parsed.data.name,
+        parsed.data.description,
         now
       );
 
       return res.status(201).json({
         id: boardId,
         code,
-        name: parsed.data.name
+        name: parsed.data.name,
+        description: parsed.data.description
       });
     } catch (error) {
       const message = error instanceof Error ? error.message : "";
@@ -185,6 +193,45 @@ app.get("/api/boards/:code", (req, res) => {
   }
 
   return res.json(boardPayload);
+});
+
+app.patch("/api/boards/:code", (req, res) => {
+  const board = getBoardByCode(req.params.code);
+  if (!board) {
+    return res.status(404).json({ error: "Board not found" });
+  }
+
+  const parsed = z
+    .object({
+      name: z.string().trim().min(1).max(80).optional(),
+      description: z.string().max(2000).optional()
+    })
+    .refine((value) => Object.keys(value).length > 0, {
+      message: "At least one field is required"
+    })
+    .safeParse(req.body ?? {});
+
+  if (!parsed.success) {
+    return res.status(400).json({ error: parsed.error.flatten() });
+  }
+
+  const updates: string[] = [];
+  const values: unknown[] = [];
+
+  if (parsed.data.name !== undefined) {
+    updates.push("name = ?");
+    values.push(parsed.data.name);
+  }
+
+  if (parsed.data.description !== undefined) {
+    updates.push("description = ?");
+    values.push(parsed.data.description);
+  }
+
+  values.push(board.code);
+
+  db.prepare(`UPDATE boards SET ${updates.join(", ")} WHERE code = ?`).run(...values);
+  return res.status(200).json({ ok: true });
 });
 
 app.post("/api/boards/:code/participants", (req, res) => {
@@ -388,6 +435,14 @@ app.delete("/api/boards/:code/tasks/:taskId", (req, res) => {
 
   return res.status(204).send();
 });
+
+const webDist = path.join(__dirname, "../../web/dist");
+if (fs.existsSync(webDist)) {
+  app.use(express.static(webDist));
+  app.get(/^(?!\/api).*/, (_req, res) => {
+    res.sendFile(path.join(webDist, "index.html"));
+  });
+}
 
 const server = app.listen(port, () => {
   console.log(`API server running on http://localhost:${port}`);
