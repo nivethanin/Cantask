@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"No tests specified\"",
     "dev": "npm run dev:clean && concurrently \"npm run dev:api\" \"npm run dev:web\"",
     "dev:clean": "sh -c 'PIDS=$(lsof -tiTCP:4000 -sTCP:LISTEN 2>/dev/null; lsof -tiTCP:4001 -sTCP:LISTEN 2>/dev/null); if [ -n \"$PIDS\" ]; then echo \"Stopping stale API processes: $PIDS\"; echo \"$PIDS\" | xargs -r kill -9; fi'",
     "dev:api": "PORT=4001 npm run dev --workspace @cantask/api",
