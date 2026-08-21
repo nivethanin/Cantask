@@ -62,4 +62,12 @@ jobs:
           app-name: 'Cantask'
           slot-name: 'Production'
           package: .
+
+      - name: Configure Node startup and database path
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            az webapp config set --resource-group Cantask --name Cantask --startup-file "node apps/api/dist/server.js"
+            az webapp config appsettings set --resource-group Cantask --name Cantask --settings PORT=4001 DATA_DIR=/home/site/cantask-data
+            az webapp restart --resource-group Cantask --name Cantask
           
